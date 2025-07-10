@@ -13,7 +13,11 @@ const Index = () => {
       subtitle: "Tu primer paso al universo digital",
       price: "GRATIS",
       features: [
-        "✔️ Marketplace B2C y B2B"
+        "✔️ Marketplace B2C y B2B",
+        "✔️ Publicación de productos en canal mayorista y minorista",
+        "✔️ Cotizador activo y estadísticas básicas",
+        "✔️ Participación en campañas generales de tráfico",
+        "✔️ Soporte por email"
       ],
       notIncluded: [
         "✖️ Setup Agroweb",
@@ -34,7 +38,14 @@ const Index = () => {
       badge: "MAS POPULAR",
       badgeColor: "popular" as const,
       features: [
-        "✔️ Marketplace B2C y B2B"
+        "✔️ Marketplace B2C y B2B",
+        "✔️ Publicación ilimitada de productos",
+        "✔️ Soporte por WhatsApp",
+        "✔️ Plan de incentivos comerciales",
+        "✔️ Reportes mensuales de performance",
+        "✔️ Mejora de catálogo y acompañamiento operativo",
+        "✔️ Participación en campañas destacadas",
+        "✔️ Posicionamiento medio en resultados de búsqueda"
       ],
       notIncluded: [
         "✖️ Setup Agroweb",
@@ -57,7 +68,14 @@ const Index = () => {
       features: [
         "✔️ Marketplace B2C y B2B",
         "✔️ AgroWebs",
-        "✔️ Gestor interno"
+        "✔️ Gestor interno",
+        "✔️ Acceso a tu propia AgroWeb personalizada",
+        "✔️ Panel de gestión para tus vendedores",
+        "✔️ Reuniones trimestrales de performance",
+        "✔️ Posicionamiento destacado en newsletters",
+        "✔️ Prioridad alta en resultados de búsqueda",
+        "✔️ Acceso a consorcios de compra",
+        "✔️ Mayor desc. en logística y serv."
       ],
       setupCosts: [
         "✅ Setup Agroweb: USD 9.000",
@@ -78,7 +96,14 @@ const Index = () => {
       features: [
         "✔️ Marketplace B2C y B2B",
         "✔️ AgroWebs",
-        "✔️ Gestor interno"
+        "✔️ Gestor interno",
+        "✔️ Consultor/acomercial dedicado/a",
+        "✔️ Posicionamiento premium en homepage y listados",
+        "✔️ Campañas de co-branding con Bipolos",
+        "✔️ Participación en proyectos y clientes validados",
+        "✔️ Acceso ampliado a infra estructural logística (CDR y PUMs)",
+        "✔️ Reuniones personalizadas y condiciones comerciales pref.",
+        "✔️ Clean team"
       ],
       setupCosts: [
         "✅ Setup Agroweb: USD 9.000",
