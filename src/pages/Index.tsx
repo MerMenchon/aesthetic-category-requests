@@ -5,9 +5,12 @@ import { PlanRequestModal } from "@/components/PlanRequestModal";
 
 // Configuración de precios por nivel (índices 0-3: Gravedad, Órbita, Galaxia, Interestelar)
 const PRICE_LEVELS = {
-  1: ["GRATIS", "USD 750", "USD 2.200", "USD 3.950"],
-  2: ["GRATIS", "USD 950", "USD 2.950", "USD 4.950"],
-  3: ["GRATIS", "USD 1.200", "USD 3.500", "USD 5.950"]
+  //1: AGRONOMIA
+  1: ["GRATIS", "USD 950", "USD 2.950", "USD 4.950"],
+  //2: EMPRESA CHICA
+  2: ["USD 300", "USD 1.475", "USD 2.475", "USD 5.975"],
+  // 3: EMPRESA GRANDE
+  3: ["USD 300", "USD 2.900", "USD 4.950", "USD 11.950"]
 };
 
 // Mapeo explícito de números a planes
