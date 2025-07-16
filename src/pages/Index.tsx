@@ -22,9 +22,10 @@ const PLAN_MAPPING = {
 };
 
 // Funciones utilitarias que trabajan con índices numéricos
-const getPriceByLevel = (planIndex: number, priceLevel: number): string => {
+//const getPriceByLevel = (planIndex: number, priceLevel: number): string => {
+const getPriceByLevel = (1,1): string => {
   const prices = PRICE_LEVELS[priceLevel as keyof typeof PRICE_LEVELS];
-  return prices?.[planIndex] || "GRATIS";
+  return prices?.[planIndex];
 };
 
 const getPlanBadge = (planIndex: number, highlightedPlanIndex: number) => {
