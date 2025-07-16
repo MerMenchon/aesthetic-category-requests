@@ -97,7 +97,7 @@ const Index = () => {
   }];
 
   // Usar configurePlans con parámetros directos: (priceLevel, highlightedPlan)
-  const plans = configurePlans(1, 2, basePlans); // Ejemplo: precios agronomía, destacar órbita
+  const plans = configurePlans(3, 1, basePlans); // Ejemplo: precios agronomía, destacar órbita
   
   // Función para manejar la selección de planes
   const handlePlanSelect = (planTitle: string) => {
