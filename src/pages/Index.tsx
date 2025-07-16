@@ -3,34 +3,25 @@ import { useSearchParams } from "react-router-dom";
 import { PlanCard } from "@/components/PlanCard";
 import { PlanRequestModal } from "@/components/PlanRequestModal";
 
-// Configuración de precios por nivel
+// Configuración de precios por nivel (índices 0-3: Gravedad, Órbita, Galaxia, Interestelar)
 const PRICE_LEVELS = {
-  1: {
-    "🌑 Gravedad": "GRATIS",
-    "🛰️ Órbita": "USD 750",
-    "🌌 Galaxia": "USD 2.200",
-    "🚀 Interestelar": "USD 3.950"
-  },
-  2: {
-    "🌑 Gravedad": "GRATIS",
-    "🛰️ Órbita": "USD 950",
-    "🌌 Galaxia": "USD 2.950",
-    "🚀 Interestelar": "USD 4.950"
-  },
-  3: {
-    "🌑 Gravedad": "GRATIS",
-    "🛰️ Órbita": "USD 1.200",
-    "🌌 Galaxia": "USD 3.500",
-    "🚀 Interestelar": "USD 5.950"
-  }
+  1: ["GRATIS", "USD 750", "USD 2.200", "USD 3.950"],
+  2: ["GRATIS", "USD 950", "USD 2.950", "USD 4.950"],
+  3: ["GRATIS", "USD 1.200", "USD 3.500", "USD 5.950"]
 };
 
-// Mapeo de planes por número
-const PLAN_ORDER = ["🌑 Gravedad", "🛰️ Órbita", "🌌 Galaxia", "🚀 Interestelar"];
+// Mapeo explícito de números a planes
+const PLAN_MAPPING = {
+  1: "🌑 Gravedad",
+  2: "🛰️ Órbita", 
+  3: "🌌 Galaxia",
+  4: "🚀 Interestelar"
+};
 
-// Funciones utilitarias
-const getPriceByLevel = (planName: string, level: number): string => {
-  return PRICE_LEVELS[level as keyof typeof PRICE_LEVELS]?.[planName as keyof typeof PRICE_LEVELS[1]] || "GRATIS";
+// Funciones utilitarias que trabajan con índices numéricos
+const getPriceByLevel = (planIndex: number, priceLevel: number): string => {
+  const prices = PRICE_LEVELS[priceLevel as keyof typeof PRICE_LEVELS];
+  return prices?.[planIndex] || "GRATIS";
 };
 
 const getPlanBadge = (planIndex: number, highlightedPlanIndex: number) => {
@@ -99,10 +90,10 @@ const Index = () => {
     description: "Para referentes del mercado que buscan maximizar su crecimiento omnicanal y operar como socios estratégicos de Bipolos."
   }];
 
-  // Aplicar precios dinámicos y badges
+  // Aplicar precios dinámicos y badges usando índices numéricos
   const plans = basePlans.map((plan, index) => ({
     ...plan,
-    price: getPriceByLevel(plan.title, priceLevel),
+    price: getPriceByLevel(index, priceLevel),
     ...getPlanBadge(index, highlightedPlan)
   }));
   const handlePlanSelect = (planTitle: string) => {
