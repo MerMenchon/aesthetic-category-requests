@@ -35,6 +35,8 @@ const getPlanBadge = (planIndex: number, highlightedPlanIndex: number) => {
   }
   return {};
 };
+const priceLevel : 1;
+const highlightedPlan: 2; 
 
 // Función principal que configura los planes con parámetros directos
 const configurePlans = (priceLevel: 1 | 2 | 3, highlightedPlan: 1 | 2 | 3 | 4, basePlans: any[]) => {
