@@ -1,5 +1,4 @@
 import { useState } from "react";
-import { useSearchParams } from "react-router-dom";
 import { PlanCard } from "@/components/PlanCard";
 import { PlanRequestModal } from "@/components/PlanRequestModal";
 
@@ -37,15 +36,19 @@ const getPlanBadge = (planIndex: number, highlightedPlanIndex: number) => {
   return {};
 };
 
+// Función principal que configura los planes con parámetros directos
+const configurePlans = (priceLevel: 1 | 2 | 3, highlightedPlan: 1 | 2 | 3 | 4, basePlans: any[]) => {
+  return basePlans.map((plan, index) => ({
+    ...plan,
+    price: getPriceByLevel(index, priceLevel),
+    ...getPlanBadge(index, highlightedPlan)
+  }));
+};
+
 const Index = () => {
-  const [searchParams] = useSearchParams();
   const [selectedPlan, setSelectedPlan] = useState<string | null>(null);
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [currentUserPlan] = useState<string>("🛰️ Órbita"); // Simulating current user plan
-
-  // Obtener parámetros de la URL con valores por defecto
-  const priceLevel = Math.min(3, Math.max(1, parseInt(searchParams.get('priceLevel') || '2')));
-  const highlightedPlan = Math.min(4, Math.max(1, parseInt(searchParams.get('highlightedPlan') || '2')));
 
   const basePlans = [{
     title: "🌑 Gravedad",
@@ -93,12 +96,8 @@ const Index = () => {
     description: "Para referentes del mercado que buscan maximizar su crecimiento omnicanal y operar como socios estratégicos de Bipolos."
   }];
 
-  // Aplicar precios dinámicos y badges usando índices numéricos
-  const plans = basePlans.map((plan, index) => ({
-    ...plan,
-    price: getPriceByLevel(index, priceLevel),
-    ...getPlanBadge(index, highlightedPlan)
-  }));
+  // Usar configurePlans con parámetros directos: (priceLevel, highlightedPlan)
+  const plans = configurePlans(1, 2, basePlans); // Ejemplo: precios agronomía, destacar órbita
   const handlePlanSelect = (planTitle: string) => {
     setSelectedPlan(planTitle);
     setIsModalOpen(true);
