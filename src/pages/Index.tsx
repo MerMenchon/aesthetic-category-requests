@@ -99,7 +99,7 @@ const Index = () => {
   // Usar configurePlans con parámetros directos: (priceLevel, highlightedPlan)
   // priceLevel: 1=Agronomía, 2=Empresa Chica, 3=Empresa Grande
   // highlightedPlan: 1=Gravedad, 2=Órbita, 3=Galaxia, 4=Interestelar
-  const plans = configurePlans(1, 2, basePlans); // Agronomía prices, highlight Órbita
+  const plans = configurePlans(2, 4, basePlans); // Empresa Chica prices, highlight Interestelar
   console.log("Plans configured:", plans.map(p => ({ title: p.title, price: p.price, badge: p.badge })));
   
   // Función para manejar la selección de planes
