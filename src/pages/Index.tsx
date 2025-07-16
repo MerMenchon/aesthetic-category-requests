@@ -48,7 +48,7 @@ const configurePlans = (priceLevel: 1 | 2 | 3, highlightedPlan: 1 | 2 | 3 | 4, b
 const Index = () => {
   const [selectedPlan, setSelectedPlan] = useState<string | null>(null);
   const [isModalOpen, setIsModalOpen] = useState(false);
-  const [currentUserPlan] = useState<string>("🛰️ Órbita"); // Simulating current user plan
+  const [currentUserPlan] = useState<string>("🚀 Interestelar"); // Simulating current user plan
 
   const basePlans = [{
     title: "🌑 Gravedad",
