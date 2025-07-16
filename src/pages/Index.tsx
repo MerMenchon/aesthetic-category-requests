@@ -36,6 +36,11 @@ const getPlanBadge = (planIndex: number, highlightedPlanIndex: number) => {
   return {};
 };
 
+// Helper para convertir índice numérico a nombre de plan
+const getPlanNameByIndex = (planIndex: 1 | 2 | 3 | 4): string => {
+  return PLAN_MAPPING[planIndex];
+};
+
 // Función principal que configura los planes con parámetros directos
 const configurePlans = (priceLevel: 1 | 2 | 3, highlightedPlan: 1 | 2 | 3 | 4, basePlans: any[]) => {
   return basePlans.map((plan, index) => ({
@@ -45,10 +50,19 @@ const configurePlans = (priceLevel: 1 | 2 | 3, highlightedPlan: 1 | 2 | 3 | 4, b
   }));
 };
 
+// Configuración central - cambiar estos valores para modificar el comportamiento
+const CONFIG = {
+  priceLevel: 2 as const,        // 1=Agronomía, 2=Empresa Chica, 3=Empresa Grande
+  highlightedPlan: 4 as const,   // 1=Gravedad, 2=Órbita, 3=Galaxia, 4=Interestelar
+  activePlan: 4 as const         // 1=Gravedad, 2=Órbita, 3=Galaxia, 4=Interestelar
+};
+
 const Index = () => {
   const [selectedPlan, setSelectedPlan] = useState<string | null>(null);
   const [isModalOpen, setIsModalOpen] = useState(false);
-  const [currentUserPlan] = useState<string>("🚀 Interestelar"); // Simulating current user plan
+  
+  // Obtener el plan activo dinámicamente basado en CONFIG
+  const currentUserPlan = getPlanNameByIndex(CONFIG.activePlan);
 
   const basePlans = [{
     title: "🌑 Gravedad",
@@ -96,10 +110,8 @@ const Index = () => {
     description: "Para referentes del mercado que buscan maximizar su crecimiento omnicanal y operar como socios estratégicos de Bipolos."
   }];
 
-  // Usar configurePlans con parámetros directos: (priceLevel, highlightedPlan)
-  // priceLevel: 1=Agronomía, 2=Empresa Chica, 3=Empresa Grande
-  // highlightedPlan: 1=Gravedad, 2=Órbita, 3=Galaxia, 4=Interestelar
-  const plans = configurePlans(2, 4, basePlans); // Empresa Chica prices, highlight Interestelar
+  // Usar configurePlans con parámetros desde CONFIG
+  const plans = configurePlans(CONFIG.priceLevel, CONFIG.highlightedPlan, basePlans);
   console.log("Plans configured:", plans.map(p => ({ title: p.title, price: p.price, badge: p.badge })));
   
   // Función para manejar la selección de planes
