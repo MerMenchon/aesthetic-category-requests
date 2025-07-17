@@ -9,7 +9,7 @@ const PRICE_LEVELS = {
   //2: EMPRESA CHICA
   2: ["USD 300", "USD 1.475", "USD 2.475", "USD 5.975"],
   // 3: EMPRESA GRANDE
-  3: ["USD 300", "USD 2.900", "USD 4.950", "USD 11.950"]
+  3: ["USD 300", "USD 2.950", "USD 4.950", "USD 11.950"]
 };
 
 // Mapeo explícito de números a planes
