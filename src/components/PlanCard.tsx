@@ -56,7 +56,7 @@ export const PlanCard = ({
             {discountedPrice && (priceLevel === 2 || priceLevel === 3) && (
               <div className="mt-2 text-sm">
                 <p className="text-muted-foreground">
-                  Si cumplís con los requerimientos del plan anterior -{priceLevel === 2 ? "50%" : "35%"}:
+                  Descuento primeros suscriptores -{priceLevel === 2 ? "50%" : "35%"}
                 </p>
                 <p className="text-lg font-bold text-green-600">{discountedPrice}</p>
               </div>
