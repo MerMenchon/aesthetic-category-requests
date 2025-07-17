@@ -52,7 +52,7 @@ const configurePlans = (priceLevel: 1 | 2 | 3, highlightedPlan: 1 | 2 | 3 | 4, b
 
 // Configuración central - cambiar estos valores para modificar el comportamiento
 const CONFIG = {
-  priceLevel: 1 as const,        // 1=Agronomía, 2=Empresa Chica, 3=Empresa Grande
+  priceLevel: 3 as const,        // 1=Agronomía, 2=Empresa Chica, 3=Empresa Grande
   highlightedPlan: 2 as const,   // 1=Gravedad, 2=Órbita, 3=Galaxia, 4=Interestelar
   activePlan: 4 as const         // 1=Gravedad, 2=Órbita, 3=Galaxia, 4=Interestelar
 };
