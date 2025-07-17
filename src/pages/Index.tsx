@@ -7,7 +7,7 @@ const PRICE_LEVELS = {
   //1: AGRONOMIA
   1: ["GRATIS", "USD 950", "USD 2.950", "USD 4.950"],
   //2: EMPRESA CHICA
-  2: ["USD 300", "USD 1.475", "USD 2.475", "USD 5.975"],
+  2: ["USD 300", "USD 2.950", "USD 4.950", "USD 11.950"],
   // 3: EMPRESA GRANDE
   3: ["USD 300", "USD 2.950", "USD 4.950", "USD 11.950"]
 };
