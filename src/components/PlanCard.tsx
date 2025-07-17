@@ -6,6 +6,8 @@ interface PlanCardProps {
   title: string;
   subtitle: string;
   price: string;
+  discountedPrice?: string | null;
+  priceLevel?: number;
   features: string[];
   notIncluded?: string[];
   setupCosts?: string[];
@@ -23,6 +25,8 @@ export const PlanCard = ({
   title,
   subtitle,
   price,
+  discountedPrice,
+  priceLevel,
   features,
   notIncluded,
   setupCosts,
@@ -49,6 +53,14 @@ export const PlanCard = ({
           <div className="text-center py-3 bg-primary/10 rounded-lg border border-primary/20">
             <p className="text-sm text-muted-foreground">Suscripción mensual:</p>
             <p className="text-xl font-bold text-primary">{price}</p>
+            {discountedPrice && (priceLevel === 2 || priceLevel === 3) && (
+              <div className="mt-2 text-sm">
+                <p className="text-muted-foreground">
+                  Si cumplís con los requerimientos del plan anterior -{priceLevel === 2 ? "50%" : "35%"}:
+                </p>
+                <p className="text-lg font-bold text-green-600">{discountedPrice}</p>
+              </div>
+            )}
           </div>
 
           {/* Includes */}

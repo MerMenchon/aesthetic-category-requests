@@ -26,6 +26,19 @@ const getPriceByLevel = (planIndex: number, priceLevel: number): string => {
   return prices?.[planIndex];
 };
 
+// Función para calcular precio con descuento
+const calculateDiscountedPrice = (originalPrice: string, priceLevel: number): string | null => {
+  if (priceLevel === 1) return null; // Agronomía no tiene descuento
+  
+  const numericPrice = parseFloat(originalPrice.replace(/[^\d.]/g, ''));
+  if (isNaN(numericPrice)) return null;
+  
+  const discountPercentage = priceLevel === 2 ? 0.5 : 0.35; // 50% para Empresa Chica, 35% para Empresa Grande
+  const discountedPrice = numericPrice * (1 - discountPercentage);
+  
+  return `USD ${discountedPrice.toLocaleString()}`;
+};
+
 const getPlanBadge = (planIndex: number, highlightedPlanIndex: number) => {
   if (planIndex + 1 === highlightedPlanIndex) {
     return {
@@ -43,11 +56,18 @@ const getPlanNameByIndex = (planIndex: 1 | 2 | 3 | 4): string => {
 
 // Función principal que configura los planes con parámetros directos
 const configurePlans = (priceLevel: 1 | 2 | 3, highlightedPlan: 1 | 2 | 3 | 4, basePlans: any[]) => {
-  return basePlans.map((plan, index) => ({
-    ...plan,
-    price: getPriceByLevel(index, priceLevel),
-    ...getPlanBadge(index, highlightedPlan)
-  }));
+  return basePlans.map((plan, index) => {
+    const originalPrice = getPriceByLevel(index, priceLevel);
+    const discountedPrice = index > 0 ? calculateDiscountedPrice(originalPrice, priceLevel) : null; // Solo planes 2, 3, 4 tienen descuento
+    
+    return {
+      ...plan,
+      price: originalPrice,
+      discountedPrice,
+      priceLevel,
+      ...getPlanBadge(index, highlightedPlan)
+    };
+  });
 };
 
 // Configuración central - cambiar estos valores para modificar el comportamiento
@@ -138,7 +158,7 @@ const Index = () => {
 
         {/* Plans Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-6 mb-12">
-          {plans.map((plan, index) => <PlanCard key={plan.title} title={plan.title} subtitle={plan.subtitle} price={plan.price} features={plan.features} notIncluded={plan.notIncluded} setupCosts={plan.setupCosts} details={plan.details} badge={plan.badge} badgeColor={plan.badgeColor} isCurrentPlan={currentUserPlan === plan.title} onSelect={() => handlePlanSelect(plan.title)} />)}
+          {plans.map((plan, index) => <PlanCard key={plan.title} title={plan.title} subtitle={plan.subtitle} price={plan.price} discountedPrice={plan.discountedPrice} priceLevel={plan.priceLevel} features={plan.features} notIncluded={plan.notIncluded} setupCosts={plan.setupCosts} details={plan.details} badge={plan.badge} badgeColor={plan.badgeColor} isCurrentPlan={currentUserPlan === plan.title} onSelect={() => handlePlanSelect(plan.title)} />)}
         </div>
 
       </div>
