@@ -73,8 +73,17 @@ const configurePlans = (priceLevel: 1 | 2 | 3, highlightedPlan: 1 | 2 | 3 | 4, b
 // Configuración central - cambiar estos valores para modificar el comportamiento
 const CONFIG = {
   priceLevel: 3 as const,        // 1=Agronomía, 2=Empresa Chica, 3=Empresa Grande
-  highlightedPlan: 2 as const,   // 1=Gravedad, 2=Órbita, 3=Galaxia, 4=Interestelar
   activePlan: 4 as const         // 1=Gravedad, 2=Órbita, 3=Galaxia, 4=Interestelar
+};
+
+
+//Si es agronomia o empresa chica el recomendado es Galaxia
+//Si es empresa grande, el recomendado es interestelar
+const highlightedPlan = getHighlightedPlan(CONFIG.priceLevel);
+
+
+const getHighlightedPlan = (priceLevel: 1 | 2 | 3): 3 | 4 => {
+  return priceLevel === 3 ? 4 : 3;
 };
 
 const Index = () => {
@@ -130,8 +139,8 @@ const Index = () => {
     description: "Para referentes del mercado que buscan maximizar su crecimiento omnicanal y operar como socios estratégicos de Bipolos."
   }];
 
-  // Usar configurePlans con parámetros desde CONFIG
-  const plans = configurePlans(CONFIG.priceLevel, CONFIG.highlightedPlan, basePlans);
+  // Usar configurePlans con parámetros desde CONFIG y desde const highlightedPlan
+  const plans = configurePlans(CONFIG.priceLevel, highlightedPlan, basePlans);
   console.log("Plans configured:", plans.map(p => ({ title: p.title, price: p.price, badge: p.badge })));
   
   // Función para manejar la selección de planes
