@@ -70,21 +70,19 @@ const configurePlans = (priceLevel: 1 | 2 | 3, highlightedPlan: 1 | 2 | 3 | 4, b
   });
 };
 
+const getHighlightedPlan = (priceLevel: 1 | 2 | 3): 3 | 4 => {
+  return priceLevel === 3 ? 4 : 3;
+};
+
 // Configuración central - cambiar estos valores para modificar el comportamiento
 const CONFIG = {
   priceLevel: 3 as const,        // 1=Agronomía, 2=Empresa Chica, 3=Empresa Grande
   activePlan: 4 as const         // 1=Gravedad, 2=Órbita, 3=Galaxia, 4=Interestelar
 };
 
-
 //Si es agronomia o empresa chica el recomendado es Galaxia
 //Si es empresa grande, el recomendado es interestelar
 const highlightedPlan = getHighlightedPlan(CONFIG.priceLevel);
-
-
-const getHighlightedPlan = (priceLevel: 1 | 2 | 3): 3 | 4 => {
-  return priceLevel === 3 ? 4 : 3;
-};
 
 const Index = () => {
   const [selectedPlan, setSelectedPlan] = useState<string | null>(null);
