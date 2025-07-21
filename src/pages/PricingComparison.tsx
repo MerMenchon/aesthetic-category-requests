@@ -102,7 +102,7 @@ const PricingComparison = () => {
                     </tr>
                     <tr className="border-b bg-green-50">
                       <td className="p-4 font-semibold">Bonificaciones</td>
-                      <td className="p-4 text-center">-</td>
+                      <td className="p-4 text-center text-sm text-muted-foreground">(no aplica)</td>
                       <td className="p-4 text-center text-sm">
                         <div className="text-green-600 font-semibold">USD 950</div>
                         <div className="text-xs">si cumplís con las condiciones*</div>
