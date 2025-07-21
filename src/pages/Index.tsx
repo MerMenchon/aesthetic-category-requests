@@ -76,7 +76,7 @@ const getHighlightedPlan = (priceLevel: 1 | 2 | 3): 3 | 4 => {
 
 // Configuración central - cambiar estos valores para modificar el comportamiento
 const CONFIG = {
-  priceLevel: 3 as const,        // 1=Agronomía, 2=Empresa Chica, 3=Empresa Grande
+  priceLevel: 1 as const,        // 1=Agronomía, 2=Empresa Chica, 3=Empresa Grande
   activePlan: 4 as const         // 1=Gravedad, 2=Órbita, 3=Galaxia, 4=Interestelar
 };
 
