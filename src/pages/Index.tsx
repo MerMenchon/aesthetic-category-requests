@@ -110,7 +110,7 @@ const Index = () => {
     details: {
       discount: "0%",
       subscription: "Mensual",
-      bonus: "USD 950 (si accedés al plan de incentivo 100%)"
+      bonus: "USD 950 si cumplís con las condiciones*"
     },
     description: "Ideal para empresas activas que quieren mejorar su gestión, visibilidad y rendimiento comercial."
   }, {
