@@ -123,16 +123,13 @@ const PricingComparison = () => {
           </Card>
 
           {/* Condiciones para Agronomía */}
-          <Card className="mt-4">
-            <CardHeader>
-              <CardTitle className="text-lg">Condiciones para Bonificaciones</CardTitle>
-            </CardHeader>
-            <CardContent className="space-y-2 text-sm">
-              <p><strong>*Condiciones Plan Órbita:</strong> Especificar condiciones aquí</p>
-              <p><strong>**Condiciones Plan Galaxia:</strong> Especificar condiciones aquí</p>
-              <p><strong>***Condiciones Plan Interestelar:</strong> Especificar condiciones aquí</p>
-            </CardContent>
-          </Card>
+          <div className="mt-4 p-4 bg-muted/30 rounded-lg">
+            <div className="space-y-2 text-sm text-muted-foreground">
+              <p><strong>*Condiciones para plan Órbita:</strong> Especificar condiciones aquí</p>
+              <p><strong>**Condiciones para plan Galaxia:</strong> Especificar condiciones aquí</p>
+              <p><strong>***Condiciones para plan Interestelar:</strong> Especificar condiciones aquí</p>
+            </div>
+          </div>
         </div>
 
         {/* EMPRESA CHICA */}
