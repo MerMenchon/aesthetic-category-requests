@@ -21,6 +21,7 @@ interface PlanCardProps {
   badge?: string;
   badgeColor?: "popular" | "recommended";
   isCurrentPlan?: boolean;
+  showButton?: boolean;
   onSelect: () => void;
 }
 
@@ -37,6 +38,7 @@ export const PlanCard = ({
   badge,
   badgeColor = "popular",
   isCurrentPlan = false,
+  showButton = true,
   onSelect
 }: PlanCardProps) => {
   return (
@@ -144,20 +146,22 @@ export const PlanCard = ({
           </div>
 
           {/* Footer */}
-          <div className="pt-2 space-y-3">            
-            <Button 
-              onClick={onSelect} 
-              className={cn(
-                "w-full font-semibold transition-all duration-300",
-                isCurrentPlan 
-                  ? "bg-secondary text-secondary-foreground hover:bg-secondary/80" 
-                  : "bg-primary text-primary-foreground hover:bg-primary/90"
-              )} 
-              disabled={isCurrentPlan}
-            >
-              {isCurrentPlan ? "Plan Activo" : "Solicitar Plan"}
-            </Button>
-          </div>
+          {showButton && (
+            <div className="pt-2 space-y-3">            
+              <Button 
+                onClick={onSelect} 
+                className={cn(
+                  "w-full font-semibold transition-all duration-300",
+                  isCurrentPlan 
+                    ? "bg-accent text-accent-foreground hover:bg-accent/80 border-accent" 
+                    : "bg-primary text-primary-foreground hover:bg-primary/90"
+                )} 
+                disabled={isCurrentPlan}
+              >
+                {isCurrentPlan ? "Plan Activo" : "Solicitar Plan"}
+              </Button>
+            </div>
+          )}
         </div>
       </Card>
     </div>

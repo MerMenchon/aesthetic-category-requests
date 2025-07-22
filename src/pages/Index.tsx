@@ -121,7 +121,7 @@ const Index = () => {
     details: {
       discount: "-10%",
       subscription: "Trimestral",
-      bonus: "USD 950 (si accedés al plan de incentivo 100%)"
+      bonus: "No aplica"
     },
     description: "Ideal para empresas que buscan escalar, automatizar su operación y destacarse frente a la competencia."
   }, {
@@ -132,7 +132,7 @@ const Index = () => {
     details: {
       discount: "-20%",
       subscription: "Semestral",
-      bonus: "USD 950 (si accedés al plan de incentivo 100%)"
+      bonus: "No aplica"
     },
     description: "Para referentes del mercado que buscan maximizar su crecimiento omnicanal y operar como socios estratégicos de Bipolos."
   }];
@@ -141,11 +141,25 @@ const Index = () => {
   const plans = configurePlans(CONFIG.priceLevel, highlightedPlan, basePlans);
   console.log("Plans configured:", plans.map(p => ({ title: p.title, price: p.price, badge: p.badge })));
   
+  // Función para determinar la visibilidad de botones basada en el plan activo
+  const getButtonVisibility = (planIndex: number) => {
+    const currentPlanIndex = CONFIG.activePlan - 1; // Convertir a índice base 0
+    
+    if (planIndex === currentPlanIndex) {
+      return { showButton: true, isCurrentPlan: true };
+    } else if (planIndex === currentPlanIndex + 1) {
+      return { showButton: true, isCurrentPlan: false };
+    } else {
+      return { showButton: false, isCurrentPlan: false };
+    }
+  };
+  
   // Función para manejar la selección de planes
   const handlePlanSelect = (planTitle: string) => {
     setSelectedPlan(planTitle);
     setIsModalOpen(true);
   };
+
   return <div className="min-h-screen bg-background">
       {/* Hero Section */}
       <div className="container mx-auto px-4 py-12">
@@ -165,7 +179,28 @@ const Index = () => {
 
         {/* Plans Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-6 mb-12">
-          {plans.map((plan, index) => <PlanCard key={plan.title} title={plan.title} subtitle={plan.subtitle} price={plan.price} discountedPrice={plan.discountedPrice} priceLevel={plan.priceLevel} features={plan.features} notIncluded={plan.notIncluded} setupCosts={plan.setupCosts} details={plan.details} badge={plan.badge} badgeColor={plan.badgeColor} isCurrentPlan={currentUserPlan === plan.title} onSelect={() => handlePlanSelect(plan.title)} />)}
+          {plans.map((plan, index) => {
+            const buttonVisibility = getButtonVisibility(index);
+            return (
+              <PlanCard 
+                key={plan.title} 
+                title={plan.title} 
+                subtitle={plan.subtitle} 
+                price={plan.price} 
+                discountedPrice={plan.discountedPrice} 
+                priceLevel={plan.priceLevel} 
+                features={plan.features} 
+                notIncluded={plan.notIncluded} 
+                setupCosts={plan.setupCosts} 
+                details={plan.details} 
+                badge={plan.badge} 
+                badgeColor={plan.badgeColor} 
+                isCurrentPlan={buttonVisibility.isCurrentPlan}
+                showButton={buttonVisibility.showButton}
+                onSelect={() => handlePlanSelect(plan.title)} 
+              />
+            );
+          })}
         </div>
 
       </div>
