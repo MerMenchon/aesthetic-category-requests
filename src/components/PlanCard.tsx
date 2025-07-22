@@ -174,7 +174,7 @@ export const PlanCard = ({
                 className={cn(
                   "w-full font-semibold transition-all duration-300",
                   isCurrentPlan 
-                    ? "bg-green-500 text-white hover:bg-green-600 border-green-500" 
+                    ? "bg-accent text-accent-foreground hover:bg-accent/90" 
                     : "bg-primary text-primary-foreground hover:bg-primary/90"
                 )} 
                 disabled={isCurrentPlan}
