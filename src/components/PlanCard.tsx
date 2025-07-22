@@ -149,7 +149,7 @@ export const PlanCard = ({
 
           {/* Footnote for Órbita plan */}
           {title === "🛰️ Órbita" && (
-            <div className="text-xs text-muted-foreground p-3 bg-muted/30 rounded border-l-4 border-primary/50">
+            <div className="text-[10px] text-muted-foreground p-3 bg-muted/30 rounded border-l-4 border-primary/50">
               <p className="font-medium mb-2">(*)</p>
               <div className="space-y-1">
                 <p className="font-medium">Requisitos de Actualización y Cantidad</p>
