@@ -1,4 +1,3 @@
-
 import { Check } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
@@ -174,7 +173,7 @@ export const PlanCard = ({
                 className={cn(
                   "w-full font-semibold transition-all duration-300",
                   isCurrentPlan 
-                    ? "bg-accent text-accent-foreground hover:bg-accent/90" 
+                    ? "bg-green-400/50 text-green-700 hover:bg-green-400/60 border-green-400/50" 
                     : "bg-primary text-primary-foreground hover:bg-primary/90"
                 )} 
                 disabled={isCurrentPlan}

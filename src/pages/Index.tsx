@@ -145,7 +145,7 @@ const Index = () => {
     
     if (planIndex === currentPlanIndex) {
       return { showButton: true, isCurrentPlan: true };
-    } else if (planIndex === currentPlanIndex + 1) {
+    } else if (planIndex > currentPlanIndex) {
       return { showButton: true, isCurrentPlan: false };
     } else {
       return { showButton: false, isCurrentPlan: false };
