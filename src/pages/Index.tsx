@@ -120,8 +120,7 @@ const Index = () => {
     setupCosts: ["✅ Setup Agroweb: USD 9.000", "✖️ Customización Homepage + 3 landings (no incluida)", "✅ Setup gestor interno: USD 5.000"],
     details: {
       discount: "-10%",
-      subscription: "Trimestral",
-      bonus: "No aplica"
+      subscription: "Trimestral"
     },
     description: "Ideal para empresas que buscan escalar, automatizar su operación y destacarse frente a la competencia."
   }, {
@@ -131,8 +130,7 @@ const Index = () => {
     setupCosts: ["✅ Setup Agroweb: USD 9.000", "✅ Customización Homepage + 3 landings: USD 5.900", "✅ Setup gestor interno: USD 5.000"],
     details: {
       discount: "-20%",
-      subscription: "Semestral",
-      bonus: "No aplica"
+      subscription: "Semestral"
     },
     description: "Para referentes del mercado que buscan maximizar su crecimiento omnicanal y operar como socios estratégicos de Bipolos."
   }];

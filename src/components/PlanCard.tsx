@@ -141,9 +141,30 @@ export const PlanCard = ({
             <div className="text-xs text-muted-foreground space-y-1">
               <p><span className="font-medium">Descuento por pago anticipado (anual):</span> {details.discount}</p>
               <p><span className="font-medium">Suscripción mínima:</span> {details.subscription}</p>
-              <p><span className="font-medium">Bonificación:</span> {details.bonus}</p>
+              {details.bonus && (
+                <p><span className="font-medium">Bonificación:</span> {details.bonus}</p>
+              )}
             </div>
           </div>
+
+          {/* Footnote for Órbita plan */}
+          {title === "🛰️ Órbita" && (
+            <div className="text-xs text-muted-foreground p-3 bg-muted/30 rounded border-l-4 border-primary/50">
+              <p className="font-medium mb-2">(*)</p>
+              <div className="space-y-1">
+                <p className="font-medium">Requisitos de Actualización y Cantidad</p>
+                <p>• Tener sus precios actualizados en el último mes.</p>
+                <p>• Contar con más de 50 productos cargados en total.</p>
+                
+                <p className="font-medium mt-2">Requisitos de Precios y Segmentación</p>
+                <p>• Al menos el 75% de los productos deben estar dentro del rango de precio mínimo y máximo establecido.</p>
+                <p>• Deben cumplir con al menos cuatro subsegmentos distintos.</p>
+                
+                <p className="font-medium mt-2">Otra Forma es:</p>
+                <p>• Como comprador B2B, concretar al menos USD 20.000 en compras mensuales.</p>
+              </div>
+            </div>
+          )}
 
           {/* Footer */}
           {showButton && (
@@ -153,7 +174,7 @@ export const PlanCard = ({
                 className={cn(
                   "w-full font-semibold transition-all duration-300",
                   isCurrentPlan 
-                    ? "bg-accent text-accent-foreground hover:bg-accent/80 border-accent" 
+                    ? "bg-green-500 text-white hover:bg-green-600 border-green-500" 
                     : "bg-primary text-primary-foreground hover:bg-primary/90"
                 )} 
                 disabled={isCurrentPlan}
