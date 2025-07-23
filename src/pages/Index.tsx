@@ -22,180 +22,181 @@ const CUSTOMER_TYPE_MAPPING = {
   3: "Empresa Grande"
 };
 
-// Estructura completa con información de planes por tipo de cliente
+
+
 const PLAN_CONFIGURATIONS = {
-  // 1: AGRONOMIA
-  1: {
-    // 1: GRAVEDAD
-    1: {
-      title: "🌑 Gravedad",
-      subtitle: "Tu primer paso al universo digital",
-      price: "GRATIS",
-      features: ["✔️ Marketplace B2C y B2B", "✔️ Publicación de productos en canal mayorista y minorista", "✔️ Cotizador activo y estadísticas básicas", "✔️ Participación en campañas generales de tráfico", "✔️ Soporte por email"],
-      notIncluded: ["✖️ Setup Agroweb", "✖️ Customización Homepage + 3 landings", "✖️ Setup gestor interno"],
-      details: {
-        discount: "0%",
-        subscription: "No aplica",
-        bonus: "No aplica"
-      },
-      description: "Ideal para empresas que dan sus primeros pasos en el canal digital. Para iniciar a explorar sin compromiso."
-    },
-    // 2: ÓRBITA
-    2: {
-      title: "🛰️ Órbita",
-      subtitle: "Herramientas clave para avanzar",
-      price: "USD 950",
-      features: ["✔️ Marketplace B2C y B2B", "✔️ Publicación ilimitada de productos", "✔️ Soporte por WhatsApp", "✔️ Plan de incentivos comerciales", "✔️ Reportes mensuales de performance", "✔️ Mejora de catálogo y acompañamiento operativo", "✔️ Participación en campañas destacadas", "✔️ Posicionamiento medio en resultados de búsqueda"],
-      notIncluded: ["✖️ Setup Agroweb", "✖️ Customización Homepage + 3 landings", "✖️ Setup gestor interno"],
-      details: {
-        discount: "0%",
-        subscription: "Mensual",
-        bonus: "USD 950 si cumplís con las condiciones*"
-      },
-      description: "Ideal para empresas activas que quieren mejorar su gestión, visibilidad y rendimiento comercial."
-    },
-    // 3: GALAXIA
-    3: {
-      title: "🌌 Galaxia",
-      subtitle: "Tu negocio se destaca en el canal digital",
-      price: "USD 2.950",
-      features: ["✔️ Marketplace B2C y B2B", "✔️ AgroWebs", "✔️ Gestor interno", "✔️ Acceso a tu propia AgroWeb personalizada", "✔️ Panel de gestión para tus vendedores", "✔️ Reuniones trimestrales de performance", "✔️ Posicionamiento destacado en newsletters", "✔️ Prioridad alta en resultados de búsqueda", "✔️ Acceso a consorcios de compra", "✔️ Mayor desc. en logística y serv."],
-      setupCosts: ["✅ Setup Agroweb: USD 9.000", "✖️ Customización Homepage + 3 landings (no incluida)", "✅ Setup gestor interno: USD 5.000"],
-      details: {
-        discount: "-10%",
-        subscription: "Trimestral"
-      },
-      description: "Ideal para empresas que buscan escalar, automatizar su operación y destacarse frente a la competencia."
-    },
-    // 4: INTERESTELAR
-    4: {
-      title: "🚀 Interestelar",
-      subtitle: "Alianza estratégica, expansión sin límites",
-      price: "USD 4.950",
-      features: ["✔️ Marketplace B2C y B2B", "✔️ AgroWebs", "✔️ Gestor interno", "✔️ Consultor/acomercial dedicado/a", "✔️ Posicionamiento premium en homepage y listados", "✔️ Campañas de co-branding con Bipolos", "✔️ Participación en proyectos y clientes validados", "✔️ Acceso ampliado a infra estructural logística (CDR y PUMs)", "✔️ Reuniones personalizadas y condiciones comerciales pref.", "✔️ Clean team"],
-      setupCosts: ["✅ Setup Agroweb: USD 9.000", "✅ Customización Homepage + 3 landings: USD 5.900", "✅ Setup gestor interno: USD 5.000"],
-      details: {
-        discount: "-20%",
-        subscription: "Semestral"
-      },
-      description: "Para referentes del mercado que buscan maximizar su crecimiento omnicanal y operar como socios estratégicos de Bipolos."
-    }
-  },
-  // 2: EMPRESA CHICA
-  2: {
-    // 1: GRAVEDAD
-    1: {
-      title: "🌑 Gravedad",
-      subtitle: "Tu primer paso al universo digital",
-      price: "USD 300",
-      features: ["✔️ Marketplace B2C y B2B", "✔️ Publicación de productos en canal mayorista y minorista", "✔️ Cotizador activo y estadísticas básicas", "✔️ Participación en campañas generales de tráfico", "✔️ Soporte por email"],
-      notIncluded: ["✖️ Setup Agroweb", "✖️ Customización Homepage + 3 landings", "✖️ Setup gestor interno"],
-      details: {
-        discount: "0%",
-        subscription: "No aplica",
-        bonus: "No aplica"
-      },
-      description: "Ideal para empresas que dan sus primeros pasos en el canal digital. Para iniciar a explorar sin compromiso."
-    },
-    // 2: ÓRBITA
-    2: {
-      title: "🛰️ Órbita",
-      subtitle: "Herramientas clave para avanzar",
-      price: "USD 2.950",
-      features: ["✔️ Marketplace B2C y B2B", "✔️ Publicación ilimitada de productos", "✔️ Soporte por WhatsApp", "✔️ Plan de incentivos comerciales", "✔️ Reportes mensuales de performance", "✔️ Mejora de catálogo y acompañamiento operativo", "✔️ Participación en campañas destacadas", "✔️ Posicionamiento medio en resultados de búsqueda"],
-      notIncluded: ["✖️ Setup Agroweb", "✖️ Customización Homepage + 3 landings", "✖️ Setup gestor interno"],
-      details: {
-        discount: "0%",
-        subscription: "Mensual",
-        bonus: "USD 950 si cumplís con las condiciones*"
-      },
-      description: "Ideal para empresas activas que quieren mejorar su gestión, visibilidad y rendimiento comercial."
-    },
-    // 3: GALAXIA
-    3: {
-      title: "🌌 Galaxia",
-      subtitle: "Tu negocio se destaca en el canal digital",
-      price: "USD 4.950",
-      features: ["✔️ Marketplace B2C y B2B", "✔️ AgroWebs", "✔️ Gestor interno", "✔️ Acceso a tu propia AgroWeb personalizada", "✔️ Panel de gestión para tus vendedores", "✔️ Reuniones trimestrales de performance", "✔️ Posicionamiento destacado en newsletters", "✔️ Prioridad alta en resultados de búsqueda", "✔️ Acceso a consorcios de compra", "✔️ Mayor desc. en logística y serv."],
-      setupCosts: ["✅ Setup Agroweb: USD 9.000", "✖️ Customización Homepage + 3 landings (no incluida)", "✅ Setup gestor interno: USD 5.000"],
-      details: {
-        discount: "-10%",
-        subscription: "Trimestral"
-      },
-      description: "Ideal para empresas que buscan escalar, automatizar su operación y destacarse frente a la competencia."
-    },
-    // 4: INTERESTELAR
-    4: {
-      title: "🚀 Interestelar",
-      subtitle: "Alianza estratégica, expansión sin límites",
-      price: "USD 11.950",
-      features: ["✔️ Marketplace B2C y B2B", "✔️ AgroWebs", "✔️ Gestor interno", "✔️ Consultor/acomercial dedicado/a", "✔️ Posicionamiento premium en homepage y listados", "✔️ Campañas de co-branding con Bipolos", "✔️ Participación en proyectos y clientes validados", "✔️ Acceso ampliado a infra estructural logística (CDR y PUMs)", "✔️ Reuniones personalizadas y condiciones comerciales pref.", "✔️ Clean team"],
-      setupCosts: ["✅ Setup Agroweb: USD 9.000", "✅ Customización Homepage + 3 landings: USD 5.900", "✅ Setup gestor interno: USD 5.000"],
-      details: {
-        discount: "-20%",
-        subscription: "Semestral"
-      },
-      description: "Para referentes del mercado que buscan maximizar su crecimiento omnicanal y operar como socios estratégicos de Bipolos."
-    }
-  },
-  // 3: EMPRESA GRANDE
-  3: {
-    // 1: GRAVEDAD
-    1: {
-      title: "🌑 Gravedad",
-      subtitle: "Tu primer paso al universo digital",
-      price: "USD 300",
-      features: ["✔️ Marketplace B2C y B2B", "✔️ Publicación de productos en canal mayorista y minorista", "✔️ Cotizador activo y estadísticas básicas", "✔️ Participación en campañas generales de tráfico", "✔️ Soporte por email"],
-      notIncluded: ["✖️ Setup Agroweb", "✖️ Customización Homepage + 3 landings", "✖️ Setup gestor interno"],
-      details: {
-        discount: "0%",
-        subscription: "No aplica",
-        bonus: "No aplica"
-      },
-      description: "Ideal para empresas que dan sus primeros pasos en el canal digital. Para iniciar a explorar sin compromiso."
-    },
-    // 2: ÓRBITA
-    2: {
-      title: "🛰️ Órbita",
-      subtitle: "Herramientas clave para avanzar",
-      price: "USD 2.950",
-      features: ["✔️ Marketplace B2C y B2B", "✔️ Publicación ilimitada de productos", "✔️ Soporte por WhatsApp", "✔️ Plan de incentivos comerciales", "✔️ Reportes mensuales de performance", "✔️ Mejora de catálogo y acompañamiento operativo", "✔️ Participación en campañas destacadas", "✔️ Posicionamiento medio en resultados de búsqueda"],
-      notIncluded: ["✖️ Setup Agroweb", "✖️ Customización Homepage + 3 landings", "✖️ Setup gestor interno"],
-      details: {
-        discount: "0%",
-        subscription: "Mensual",
-        bonus: "USD 950 si cumplís con las condiciones*"
-      },
-      description: "Ideal para empresas activas que quieren mejorar su gestión, visibilidad y rendimiento comercial."
-    },
-    // 3: GALAXIA
-    3: {
-      title: "🌌 Galaxia",
-      subtitle: "Tu negocio se destaca en el canal digital",
-      price: "USD 4.950",
-      features: ["✔️ Marketplace B2C y B2B", "✔️ AgroWebs", "✔️ Gestor interno", "✔️ Acceso a tu propia AgroWeb personalizada", "✔️ Panel de gestión para tus vendedores", "✔️ Reuniones trimestrales de performance", "✔️ Posicionamiento destacado en newsletters", "✔️ Prioridad alta en resultados de búsqueda", "✔️ Acceso a consorcios de compra", "✔️ Mayor desc. en logística y serv."],
-      setupCosts: ["✅ Setup Agroweb: USD 9.000", "✖️ Customización Homepage + 3 landings (no incluida)", "✅ Setup gestor interno: USD 5.000"],
-      details: {
-        discount: "-10%",
-        subscription: "Trimestral"
-      },
-      description: "Ideal para empresas que buscan escalar, automatizar su operación y destacarse frente a la competencia."
-    },
-    // 4: INTERESTELAR
-    4: {
-      title: "🚀 Interestelar",
-      subtitle: "Alianza estratégica, expansión sin límites",
-      price: "USD 11.950",
-      features: ["✔️ Marketplace B2C y B2B", "✔️ AgroWebs", "✔️ Gestor interno", "✔️ Consultor/acomercial dedicado/a", "✔️ Posicionamiento premium en homepage y listados", "✔️ Campañas de co-branding con Bipolos", "✔️ Participación en proyectos y clientes validados", "✔️ Acceso ampliado a infra estructural logística (CDR y PUMs)", "✔️ Reuniones personalizadas y condiciones comerciales pref.", "✔️ Clean team"],
-      setupCosts: ["✅ Setup Agroweb: USD 9.000", "✅ Customización Homepage + 3 landings: USD 5.900", "✅ Setup gestor interno: USD 5.000"],
-      details: {
-        discount: "-20%",
-        subscription: "Semestral"
-      },
-      description: "Para referentes del mercado que buscan maximizar su crecimiento omnicanal y operar como socios estratégicos de Bipolos."
-    }
-  }
+ // 1: AGRONOMIA
+ 1: {
+   // 1: GRAVEDAD
+   1: {
+     title: "🌑 Gravedad",
+     subtitle: "Tu primer paso al universo digital",
+     price: "GRATIS",
+     features: ["✔️ Marketplace B2C y B2B", "✔️ Publicación de productos en canal mayorista y minorista", "✔️ Cotizador activo y estadísticas básicas", "✔️ Participación en campañas generales de tráfico", "✔️ Soporte por email"],
+     notIncluded: ["✖️ Setup Agroweb", "✖️ Customización Homepage + 3 landings", "✖️ Setup gestor interno"],
+     details: {},
+     description: ""
+   },
+   // 2: ÓRBITA
+   2: {
+     title: "🛰️ Órbita",
+     subtitle: "Herramientas clave para avanzar",
+     price: "USD 950",
+     features: ["✔️ Marketplace B2C y B2B", "✔️ Publicación ilimitada de productos", "✔️ Soporte por WhatsApp", "✔️ Plan de incentivos comerciales", "✔️ Reportes mensuales de performance", "✔️ Mejora de catálogo y acompañamiento operativo", "✔️ Participación en campañas destacadas", "✔️ Posicionamiento medio en resultados de búsqueda"],
+     notIncluded: ["✖️ Setup Agroweb", "✖️ Customización Homepage + 3 landings", "✖️ Setup gestor interno"],
+     details: {
+       discount: "0%",
+       subscription: "Mensual",
+       bonus: "USD 950 si cumplís con las condiciones*"
+     },
+     description: ""
+   },
+   // 3: GALAXIA
+   3: {
+     title: "🌌 Galaxia",
+     subtitle: "Tu negocio se destaca en el canal digital",
+     price: "USD 2.950",
+     features: ["✔️ Marketplace B2C y B2B", "✔️ AgroWebs", "✔️ Gestor interno", "✔️ Acceso a tu propia AgroWeb personalizada", "✔️ Panel de gestión para tus vendedores", "✔️ Reuniones trimestrales de performance", "✔️ Posicionamiento destacado en newsletters", "✔️ Prioridad alta en resultados de búsqueda", "✔️ Acceso a consorcios de compra", "✔️ Mayor desc. en logística y serv."],
+     setupCosts: ["✅ Setup Agroweb: USD 9.000", "✖️ Customización Homepage + 3 landings (no incluida)", "✅ Setup gestor interno: USD 5.000"],
+     details: {
+       discount: "-10%",
+       subscription: "Trimestral"
+       bonus: "USD 950 si cumplís con las condiciones*"
+     },
+     description: ""
+   },
+   // 4: INTERESTELAR
+   4: {
+     title: "🚀 Interestelar",
+     subtitle: "Alianza estratégica, expansión sin límites",
+     price: "USD 4.950",
+     features: ["✔️ Marketplace B2C y B2B", "✔️ AgroWebs", "✔️ Gestor interno", "✔️ Consultor/acomercial dedicado/a", "✔️ Posicionamiento premium en homepage y listados", "✔️ Campañas de co-branding con Bipolos", "✔️ Participación en proyectos y clientes validados", "✔️ Acceso ampliado a infra estructural logística (CDR y PUMs)", "✔️ Reuniones personalizadas y condiciones comerciales pref.", "✔️ Clean team"],
+     setupCosts: ["✅ Setup Agroweb: USD 9.000", "✅ Customización Homepage + 3 landings: USD 5.900", "✅ Setup gestor interno: USD 5.000"],
+     details: {
+       discount: "-20%",
+       subscription: "Semestral"
+       bonus: "USD 950 si cumplís con las condiciones*"
+     },
+     description: ""
+   }
+ },
+ // 2: EMPRESA CHICA
+ 2: {
+   // 1: GRAVEDAD
+   1: {
+     title: "🌑 Gravedad",
+     subtitle: "Tu primer paso al universo digital",
+     price: "USD 300",
+     features: ["✔️ Marketplace B2C y B2B", "✔️ Publicación de productos en canal mayorista y minorista", "✔️ Cotizador activo y estadísticas básicas", "✔️ Participación en campañas generales de tráfico", "✔️ Soporte por email"],
+
+
+     notIncluded: ["✖️ Setup Agroweb", "✖️ Customización Homepage + 3 landings", "✖️ Setup gestor interno", "✖️ (Costo Mensual) Clean team", "✖️ (Unica vez) PDP Premium c/u", "✖️ PDP Premium en todos los canales (B2C, B2B, Agrowebs, Gestor Interno)"],
+     details: {
+       discount: "0%",
+       subscription: "-",
+     },
+     description: ""
+   },
+   // 2: ÓRBITA
+   2: {
+     title: "🛰️ Órbita",
+     subtitle: "Herramientas clave para avanzar",
+     price: "USD 2.950",
+     features: ["✔️ Marketplace B2C y B2B", "✔️ Publicación ilimitada de productos", "✔️ Soporte por WhatsApp", "✔️ Plan de incentivos comerciales", "✔️ Reportes mensuales de performance", "✔️ Mejora de catálogo y acompañamiento operativo", "✔️ Participación en campañas destacadas", "✔️ Posicionamiento medio en resultados de búsqueda", "✔️ PDP Premium en todos los canales (B2C, B2B, Agrowebs, Gestor Interno)" "✖️ (Costo Mensual) Clean team"],
+     notIncluded: ["✖️ Setup Agroweb", "✖️ Customización Homepage + 3 landings", "✖️ Setup gestor interno"],
+     details: {
+       discount: "0%",
+       subscription: "Mensual",
+       bonus: "USD 950 si cumplís con las condiciones*"
+     },
+     description: "Ideal para empresas activas que quieren mejorar su gestión, visibilidad y rendimiento comercial."
+   },
+   // 3: GALAXIA
+   3: {
+     title: "🌌 Galaxia",
+     subtitle: "Tu negocio se destaca en el canal digital",
+     price: "USD 4.950",
+     features: ["✔️ Marketplace B2C y B2B", "✔️ AgroWebs", "✔️ Gestor interno", "✔️ Acceso a tu propia AgroWeb personalizada", "✔️ Panel de gestión para tus vendedores", "✔️ Reuniones trimestrales de performance", "✔️ Posicionamiento destacado en newsletters", "✔️ Prioridad alta en resultados de búsqueda", "✔️ Acceso a consorcios de compra", "✔️ Mayor desc. en logística y serv.", "✔️ PDP Premium en todos los canales (B2C, B2B, Agrowebs, Gestor Interno), "✔️ (Costo Mensual) Clean team (OPCIONAL)USD 6.350"],
+     setupCosts: ["✅ Setup Agroweb: USD 9.000", "✖️ Customización Homepage + 3 landings (no incluida)", "✅ Setup gestor interno: USD 5.000"],
+     details: {
+       discount: "-10%",
+       subscription: "Trimestral"
+     },
+     description: "Ideal para empresas que buscan escalar, automatizar su operación y destacarse frente a la competencia."
+   },
+   // 4: INTERESTELAR
+   4: {
+     title: "🚀 Interestelar",
+     subtitle: "Alianza estratégica, expansión sin límites",
+     price: "USD 11.950",
+     features: ["✔️ Marketplace B2C y B2B", "✔️ AgroWebs", "✔️ Gestor interno", "✔️ Consultor/acomercial dedicado/a", "✔️ Posicionamiento premium en homepage y listados", "✔️ Campañas de co-branding con Bipolos", "✔️ Participación en proyectos y clientes validados", "✔️ Acceso ampliado a infra estructural logística (CDR y PUMs)", "✔️ Reuniones personalizadas y condiciones comerciales pref.", "✔️ Clean team", "✔️ PDP Premium en todos los canales (B2C, B2B, Agrowebs, Gestor Interno)", "✔️ (Costo Mensual) Clean team (OPCIONAL)USD 6.350"],
+     setupCosts: ["✅ Setup Agroweb: USD 9.000", "✅ Customización Homepage + 3 landings: USD 5.900", "✅ Setup gestor interno: USD 5.000"],
+     details: {
+       discount: "-20%",
+       subscription: "Semestral"
+     },
+     description: "Para referentes del mercado que buscan maximizar su crecimiento omnicanal y operar como socios estratégicos de Bipolos."
+   }
+ },
+ // 3: EMPRESA GRANDE
+ 3: {
+   // 1: GRAVEDAD
+   1: {
+     title: "🌑 Gravedad",
+     subtitle: "Tu primer paso al universo digital",
+     price: "USD 300",
+     features: ["✔️ Marketplace B2C y B2B", "✔️ Publicación de productos en canal mayorista y minorista", "✔️ Cotizador activo y estadísticas básicas", "✔️ Participación en campañas generales de tráfico", "✔️ Soporte por email"],
+     notIncluded: ["✖️ Setup Agroweb", "✖️ Customización Homepage + 3 landings", "✖️ Setup gestor interno"],
+     details: {
+       discount: "0%",
+       subscription: "No aplica",
+       bonus: "No aplica"
+     },
+     description: "Ideal para empresas que dan sus primeros pasos en el canal digital. Para iniciar a explorar sin compromiso."
+   },
+   // 2: ÓRBITA
+   2: {
+     title: "🛰️ Órbita",
+     subtitle: "Herramientas clave para avanzar",
+     price: "USD 2.950",
+     features: ["✔️ Marketplace B2C y B2B", "✔️ Publicación ilimitada de productos", "✔️ Soporte por WhatsApp", "✔️ Plan de incentivos comerciales", "✔️ Reportes mensuales de performance", "✔️ Mejora de catálogo y acompañamiento operativo", "✔️ Participación en campañas destacadas", "✔️ Posicionamiento medio en resultados de búsqueda"],
+     notIncluded: ["✖️ Setup Agroweb", "✖️ Customización Homepage + 3 landings", "✖️ Setup gestor interno"],
+     details: {
+       discount: "0%",
+       subscription: "Mensual",
+       bonus: "USD 950 si cumplís con las condiciones*"
+     },
+     description: "Ideal para empresas activas que quieren mejorar su gestión, visibilidad y rendimiento comercial."
+   },
+   // 3: GALAXIA
+   3: {
+     title: "🌌 Galaxia",
+     subtitle: "Tu negocio se destaca en el canal digital",
+     price: "USD 4.950",
+     features: ["✔️ Marketplace B2C y B2B", "✔️ AgroWebs", "✔️ Gestor interno", "✔️ Acceso a tu propia AgroWeb personalizada", "✔️ Panel de gestión para tus vendedores", "✔️ Reuniones trimestrales de performance", "✔️ Posicionamiento destacado en newsletters", "✔️ Prioridad alta en resultados de búsqueda", "✔️ Acceso a consorcios de compra", "✔️ Mayor desc. en logística y serv."],
+     setupCosts: ["✅ Setup Agroweb: USD 9.000", "✖️ Customización Homepage + 3 landings (no incluida)", "✅ Setup gestor interno: USD 5.000"],
+     details: {
+       discount: "-10%",
+       subscription: "Trimestral"
+     },
+     description: "Ideal para empresas que buscan escalar, automatizar su operación y destacarse frente a la competencia."
+   },
+   // 4: INTERESTELAR
+   4: {
+     title: "🚀 Interestelar",
+     subtitle: "Alianza estratégica, expansión sin límites",
+     price: "USD 11.950",
+     features: ["✔️ Marketplace B2C y B2B", "✔️ AgroWebs", "✔️ Gestor interno", "✔️ Consultor/acomercial dedicado/a", "✔️ Posicionamiento premium en homepage y listados", "✔️ Campañas de co-branding con Bipolos", "✔️ Participación en proyectos y clientes validados", "✔️ Acceso ampliado a infra estructural logística (CDR y PUMs)", "✔️ Reuniones personalizadas y condiciones comerciales pref.", "✔️ Clean team"],
+     setupCosts: ["✅ Setup Agroweb: USD 9.000", "✅ Customización Homepage + 3 landings: USD 5.900", "✅ Setup gestor interno: USD 5.000"],
+     details: {
+       discount: "-20%",
+       subscription: "Semestral"
+     },
+     description: "Para referentes del mercado que buscan maximizar su crecimiento omnicanal y operar como socios estratégicos de Bipolos."
+   }
+ }
 };
+
 
 // Función para calcular precio con descuento
 const calculateDiscountedPrice = (originalPrice: string, priceLevel: CustomerType): string | null => {
