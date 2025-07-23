@@ -247,7 +247,7 @@ const getHighlightedPlan = (customerType: CustomerType): PlanType => {
 const CONFIG = {
   priceLevel: 1 as CustomerType,
   // 1=Agronomía, 2=Empresa Chica, 3=Empresa Grande
-  activePlan: 4 as PlanType // 1=Gravedad, 2=Órbita, 3=Galaxia, 4=Interestelar
+  activePlan: 2 as PlanType // 1=Gravedad, 2=Órbita, 3=Galaxia, 4=Interestelar
 };
 
 //Si es agronomia o empresa chica el recomendado es Galaxia
