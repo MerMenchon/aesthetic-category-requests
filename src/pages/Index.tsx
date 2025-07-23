@@ -335,6 +335,44 @@ const Index = () => {
             );
           })}
         </div>
+
+        {/* Reference Information */}
+        <div className="max-w-5xl mx-auto mb-12">
+          <div className="bg-card/80 backdrop-blur-sm border border-border rounded-lg p-6 shadow-lg">
+            <div className="text-center mb-4">
+              <h3 className="text-lg font-semibold text-accent">(*) Requisitos para Bonificación - Plan Órbita</h3>
+            </div>
+            
+            <div className="grid md:grid-cols-2 gap-6 text-sm text-foreground/90">
+              <div className="space-y-3">
+                <div>
+                  <h4 className="font-semibold text-primary mb-2">Requisitos de Actualización y Cantidad</h4>
+                  <ul className="space-y-1 pl-4">
+                    <li>• Tener sus precios actualizados en el último mes.</li>
+                    <li>• Contar con más de 50 productos cargados en total.</li>
+                  </ul>
+                </div>
+                
+                <div>
+                  <h4 className="font-semibold text-primary mb-2">Requisitos de Precios y Segmentación</h4>
+                  <ul className="space-y-1 pl-4">
+                    <li>• Al menos el 75% de los productos deben estar dentro del rango de precio mínimo y máximo establecido.</li>
+                    <li>• Deben cumplir con al menos cuatro subsegmentos distintos.</li>
+                  </ul>
+                </div>
+              </div>
+              
+              <div className="space-y-3">
+                <div>
+                  <h4 className="font-semibold text-primary mb-2">Otra Forma es:</h4>
+                  <ul className="space-y-1 pl-4">
+                    <li>• Como comprador B2B, concretar al menos USD 20.000 en compras mensuales.</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
 
       {/* Request Modal */}
