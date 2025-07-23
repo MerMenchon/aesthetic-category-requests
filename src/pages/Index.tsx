@@ -245,7 +245,7 @@ const getHighlightedPlan = (customerType: CustomerType): PlanType => {
 
 // Configuración central - cambiar estos valores para modificar el comportamiento
 const CONFIG = {
-  priceLevel: 1 as CustomerType,
+  priceLevel: 2 as CustomerType,
   // 1=Agronomía, 2=Empresa Chica, 3=Empresa Grande
   activePlan: 2 as PlanType // 1=Gravedad, 2=Órbita, 3=Galaxia, 4=Interestelar
 };
