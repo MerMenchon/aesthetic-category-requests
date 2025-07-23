@@ -172,7 +172,7 @@ const PLAN_CONFIGURATIONS = {
       subtitle: "Tu negocio se destaca en el canal digital",
       price: "USD 4.950",
       features: ["✔️ Marketplace B2C y B2B", "✔️ AgroWebs", "✔️ Gestor interno", "✔️ Acceso a tu propia AgroWeb personalizada", "✔️ Panel de gestión para tus vendedores", "✔️ Reuniones trimestrales de performance", "✔️ Posicionamiento destacado en newsletters", "✔️ Prioridad alta en resultados de búsqueda", "✔️ Acceso a consorcios de compra", "✔️ Mayor desc. en logística y serv."],
-      setupCosts: ["✅ Setup Agroweb: USD 9.000", "✖️ Customización Homepage + 3 landings (no incluida)", "✅ Setup gestor interno: USD 5.000", "✅ Setup PDP Premium hasta 20: c/u USD 490"],
+      setupCosts: ["✅ Setup Agroweb: USD 12.900", "✖️ Customización Homepage + 3 landings (no incluida)", "✅ Setup gestor interno: USD 5.000", "✅ Setup PDP Premium hasta 20: c/u USD 490"],
       details: {
         discount: "-10%",
         subscription: "Semestral",
@@ -186,7 +186,7 @@ const PLAN_CONFIGURATIONS = {
       subtitle: "Alianza estratégica, expansión sin límites",
       price: "USD 11.950",
       features: ["✔️ Marketplace B2C y B2B", "✔️ AgroWebs", "✔️ Gestor interno", "✔️ Consultor/acomercial dedicado/a", "✔️ Posicionamiento premium en homepage y listados", "✔️ Campañas de co-branding con Bipolos", "✔️ Participación en proyectos y clientes validados", "✔️ Acceso ampliado a infra estructural logística (CDR y PUMs)", "✔️ Reuniones personalizadas y condiciones comerciales pref.", "✔️ Clean team"],
-      setupCosts: ["✅ Setup Agroweb: USD 9.000", "✅ Customización Homepage + 3 landings: USD 5.900", "✅ Setup gestor interno: USD 5.000", "✅ Setup PDP Premium hasta 50: c/u USD 490 (con 50 te bonificamos el 50%)"],
+      setupCosts: ["✅ Setup Agroweb: USD 12.900", "✅ Customización Homepage + 3 landings: USD 5.900", "✅ Setup gestor interno: USD 5.000", "✅ Setup PDP Premium hasta 50: c/u USD 490 (con 50 te bonificamos el 50%)"],
       details: {
         discount: "-20%",
         subscription: "Anual",
