@@ -122,6 +122,7 @@ const PLAN_CONFIGURATIONS = {
      details: {
        discount: "-10%",
        subscription: "Trimestral"
+       bonus: "USD 950 si cumplís con las condiciones*"
      },
      description: "Ideal para empresas que buscan escalar, automatizar su operación y destacarse frente a la competencia."
    },
@@ -135,6 +136,7 @@ const PLAN_CONFIGURATIONS = {
      details: {
        discount: "-20%",
        subscription: "Semestral"
+       bonus: "USD 950 si cumplís con las condiciones*"
      },
      description: "Para referentes del mercado que buscan maximizar su crecimiento omnicanal y operar como socios estratégicos de Bipolos."
    }
