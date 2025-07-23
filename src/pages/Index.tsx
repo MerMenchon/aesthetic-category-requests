@@ -119,11 +119,11 @@ const PLAN_CONFIGURATIONS = {
      price: "USD 4.950",
      features: ["✔️ Marketplace B2C y B2B", "✔️ AgroWebs", "✔️ Gestor interno", "✔️ Acceso a tu propia AgroWeb personalizada", "✔️ Panel de gestión para tus vendedores", "✔️ Reuniones trimestrales de performance", "✔️ Posicionamiento destacado en newsletters", "✔️ Prioridad alta en resultados de búsqueda", "✔️ Acceso a consorcios de compra", "✔️ Mayor desc. en logística y serv.", "✔️ PDP Premium en todos los canales (B2C, B2B, Agrowebs, Gestor Interno)", "✔️ (Costo Mensual) Clean team (OPCIONAL) USD 6.350"],
      setupCosts: ["✅ Setup Agroweb: USD 12.900", "✖️ Customización Homepage + 3 landings (no incluida)", "✅ Setup gestor interno: USD 5.000", "✅ PDP Premium c/u USD 490"],
-     details: {
-       discount: "-10%",
-       subscription: "Trimestral"
-       bonus: "USD 950 si cumplís con las condiciones*"
-     },
+      details: {
+        discount: "-10%",
+        subscription: "Trimestral",
+        bonus: "USD 950 si cumplís con las condiciones*"
+      },
      description: "Ideal para empresas que buscan escalar, automatizar su operación y destacarse frente a la competencia."
    },
    // 4: INTERESTELAR
@@ -133,11 +133,11 @@ const PLAN_CONFIGURATIONS = {
      price: "USD 11.950",
      features: ["✔️ Marketplace B2C y B2B", "✔️ AgroWebs", "✔️ Gestor interno", "✔️ Consultor/acomercial dedicado/a", "✔️ Posicionamiento premium en homepage y listados", "✔️ Campañas de co-branding con Bipolos", "✔️ Participación en proyectos y clientes validados", "✔️ Acceso ampliado a infra estructural logística (CDR y PUMs)", "✔️ Reuniones personalizadas y condiciones comerciales pref.", "✔️ Clean team", "✔️ PDP Premium en todos los canales (B2C, B2B, Agrowebs, Gestor Interno)", "✔️ (Costo Mensual) Clean team (OPCIONAL)USD 6.350"],
       setupCosts: ["✅ Setup Agroweb: USD 12.900", "✅ Customización Homepage + 3 landings: USD 5.900", "✅ Setup gestor interno: USD 5.000", "✅ PDP Premium c/u USD 490"],
-     details: {
-       discount: "-20%",
-       subscription: "Semestral"
-       bonus: "USD 950 si cumplís con las condiciones*"
-     },
+      details: {
+        discount: "-20%",
+        subscription: "Semestral",
+        bonus: "USD 950 si cumplís con las condiciones*"
+      },
      description: "Para referentes del mercado que buscan maximizar su crecimiento omnicanal y operar como socios estratégicos de Bipolos."
    }
  },
