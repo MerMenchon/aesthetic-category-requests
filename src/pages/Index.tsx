@@ -102,8 +102,8 @@ const PLAN_CONFIGURATIONS = {
      title: "🛰️ Órbita",
      subtitle: "Herramientas clave para avanzar",
      price: "USD 2.950",
-     features: ["✔️ Marketplace B2C y B2B", "✔️ Publicación ilimitada de productos", "✔️ Soporte por WhatsApp", "✔️ Plan de incentivos comerciales", "✔️ Reportes mensuales de performance", "✔️ Mejora de catálogo y acompañamiento operativo", "✔️ Participación en campañas destacadas", "✔️ Posicionamiento medio en resultados de búsqueda", "✔️ PDP Premium en todos los canales (B2C, B2B, Agrowebs, Gestor Interno)", "✖️ (Costo Mensual) Clean team"],
-     notIncluded: ["✖️ Setup Agroweb", "✖️ Customización Homepage + 3 landings", "✖️ Setup gestor interno"],
+     features: ["✔️ Marketplace B2C y B2B", "✔️ Publicación ilimitada de productos", "✔️ Soporte por WhatsApp", "✔️ Plan de incentivos comerciales", "✔️ Reportes mensuales de performance", "✔️ Mejora de catálogo y acompañamiento operativo", "✔️ Participación en campañas destacadas", "✔️ Posicionamiento medio en resultados de búsqueda", "✔️ PDP Premium en todos los canales (B2C, B2B, Agrowebs, Gestor Interno)"],
+     notIncluded: ["✖️ Setup Agroweb", "✖️ Customización Homepage + 3 landings", "✖️ Setup gestor interno", "✖️ (Costo Mensual) Clean team"],
      details: {
        discount: "0%",
        subscription: "Mensual",
