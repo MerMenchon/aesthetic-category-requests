@@ -101,7 +101,8 @@ const PLAN_CONFIGURATIONS = {
       setupCosts: ["✅ PDP Premium c/u USD 490"],
       details: {
         discount: "0%",
-        subscription: "Mensual"
+        subscription: "Mensual",
+        bonus: "USD 950 si cumplís con las condiciones*"
       },
       description: "Ideal para empresas activas que quieren mejorar su gestión, visibilidad y rendimiento comercial."
     },
@@ -114,7 +115,8 @@ const PLAN_CONFIGURATIONS = {
       setupCosts: ["✅ Setup Agroweb: USD 12.900", "✖️ Customización Homepage + 3 landings (no incluida)", "✅ Setup gestor interno: USD 5.000", "✅ PDP Premium c/u USD 490"],
       details: {
         discount: "-10%",
-        subscription: "Trimestral"
+        subscription: "Trimestral",
+        bonus: "USD 950 si cumplís con las condiciones*"
       },
       description: "Ideal para empresas que buscan escalar, automatizar su operación y destacarse frente a la competencia."
     },
@@ -127,7 +129,8 @@ const PLAN_CONFIGURATIONS = {
       setupCosts: ["✅ Setup Agroweb: USD 12.900", "✅ Customización Homepage + 3 landings: USD 5.900", "✅ Setup gestor interno: USD 5.000", "✅ PDP Premium c/u USD 490"],
       details: {
         discount: "-20%",
-        subscription: "Semestral"
+        subscription: "Semestral",
+        bonus: "USD 950 si cumplís con las condiciones*"
       },
       description: "Para referentes del mercado que buscan maximizar su crecimiento omnicanal y operar como socios estratégicos de Bipolos."
     }
@@ -158,7 +161,8 @@ const PLAN_CONFIGURATIONS = {
       setupCosts: ["✅ Setup PDP Premium hasta 10: c/u USD 490"],
       details: {
         discount: "0%",
-        subscription: "Trimestral"
+        subscription: "Trimestral",
+        bonus: "USD 950 si cumplís con las condiciones*"
       },
       description: "Ideal para empresas activas que quieren mejorar su gestión, visibilidad y rendimiento comercial."
     },
@@ -171,7 +175,8 @@ const PLAN_CONFIGURATIONS = {
       setupCosts: ["✅ Setup Agroweb: USD 12.900", "✖️ Customización Homepage + 3 landings (no incluida)", "✅ Setup gestor interno: USD 5.000", "✅ Setup PDP Premium hasta 20: c/u USD 490"],
       details: {
         discount: "-10%",
-        subscription: "Semestral"
+        subscription: "Semestral",
+        bonus: "USD 950 si cumplís con las condiciones*"
       },
       description: "Ideal para empresas que buscan escalar, automatizar su operación y destacarse frente a la competencia."
     },
@@ -184,7 +189,8 @@ const PLAN_CONFIGURATIONS = {
       setupCosts: ["✅ Setup Agroweb: USD 12.900", "✅ Customización Homepage + 3 landings: USD 5.900", "✅ Setup gestor interno: USD 5.000", "✅ Setup PDP Premium hasta 50: c/u USD 490 (con 50 te bonificamos el 50%)"],
       details: {
         discount: "-20%",
-        subscription: "Anual"
+        subscription: "Anual",
+        bonus: "USD 950 si cumplís con las condiciones*"
       },
       description: "Para referentes del mercado que buscan maximizar su crecimiento omnicanal y operar como socios estratégicos de Bipolos."
     }
@@ -239,7 +245,7 @@ const getHighlightedPlan = (customerType: CustomerType): PlanType => {
 
 // Configuración central - cambiar estos valores para modificar el comportamiento
 const CONFIG = {
-  priceLevel: 3 as CustomerType,
+  priceLevel: 2 as CustomerType,
   // 1=Agronomía, 2=Empresa Chica, 3=Empresa Grande
   activePlan: 2 as PlanType // 1=Gravedad, 2=Órbita, 3=Galaxia, 4=Interestelar
 };
@@ -289,8 +295,7 @@ const Index = () => {
     setSelectedPlan(planTitle);
     setIsModalOpen(true);
   };
-  return (
-    <div className="min-h-screen bg-background">
+  return <div className="min-h-screen bg-background">
       {/* Hero Section */}
       <div className="container mx-auto px-4 py-12">
         <div className="text-center mb-12">
@@ -300,85 +305,62 @@ const Index = () => {
           <p className="text-xl text-muted-foreground mb-4">
             Encuentra el plan perfecto para hacer crecer tu negocio
           </p>
-          {currentUserPlan && (
-            <div className="inline-flex items-center gap-2 px-4 py-2 bg-accent/20 rounded-full">
+          {currentUserPlan && <div className="inline-flex items-center gap-2 px-4 py-2 bg-accent/20 rounded-full">
               <span className="text-sm font-semibold text-accent">
                 Plan actual: {currentUserPlan}
               </span>
-            </div>
-          )}
+            </div>}
         </div>
 
         {/* Plans Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-6 mb-12">
           {plans.map((plan, index) => {
-            const buttonVisibility = getButtonVisibility(index);
-            return (
-              <PlanCard 
-                key={plan.title} 
-                title={plan.title} 
-                subtitle={plan.subtitle} 
-                price={plan.price} 
-                discountedPrice={plan.discountedPrice} 
-                priceLevel={plan.priceLevel} 
-                features={plan.features} 
-                notIncluded={plan.notIncluded} 
-                setupCosts={plan.setupCosts} 
-                details={plan.details} 
-                badge={plan.badge} 
-                badgeColor={plan.badgeColor} 
-                isCurrentPlan={buttonVisibility.isCurrentPlan} 
-                showButton={buttonVisibility.showButton} 
-                onSelect={() => handlePlanSelect(plan.title)} 
-              />
-            );
-          })}
+          const buttonVisibility = getButtonVisibility(index);
+          return <PlanCard key={plan.title} title={plan.title} subtitle={plan.subtitle} price={plan.price} discountedPrice={plan.discountedPrice} priceLevel={plan.priceLevel} features={plan.features} notIncluded={plan.notIncluded} setupCosts={plan.setupCosts} details={plan.details} badge={plan.badge} badgeColor={plan.badgeColor} isCurrentPlan={buttonVisibility.isCurrentPlan} showButton={buttonVisibility.showButton} onSelect={() => handlePlanSelect(plan.title)} />;
+        })}
         </div>
 
-        {/* Reference Information - Solo para Agronomías */}
-        {CONFIG.priceLevel === 1 && (
-          <div className="max-w-5xl mx-auto mb-12">
-            <div className="bg-card/80 backdrop-blur-sm border border-border rounded-lg p-6 shadow-lg">
-              <div className="text-center mb-4">
-                <h3 className="text-lg font-semibold text-accent">(*) Requisitos para Bonificación</h3>
-              </div>
-              
-              <div className="grid md:grid-cols-2 gap-6 text-sm text-foreground/90">
-                <div className="space-y-3">
-                  <div>
-                    <h4 className="font-semibold text-primary mb-2">Requisitos de Actualización y Cantidad</h4>
-                    <ul className="space-y-1 pl-4">
-                      <li>• Tener sus precios actualizados en el último mes.</li>
-                      <li>• Contar con más de 50 productos cargados en total.</li>
-                    </ul>
-                  </div>
-                  
-                  <div>
-                    <h4 className="font-semibold text-primary mb-2">Requisitos de Precios y Segmentación</h4>
-                    <ul className="space-y-1 pl-4">
-                      <li>• Al menos el 75% de los productos deben estar dentro del rango de precio mínimo y máximo establecido.</li>
-                      <li>• Deben cumplir con al menos cuatro subsegmentos distintos.</li>
-                    </ul>
-                  </div>
+        {/* Reference Information */}
+        <div className="max-w-5xl mx-auto mb-12">
+          <div className="bg-card/80 backdrop-blur-sm border border-border rounded-lg p-6 shadow-lg">
+            <div className="text-center mb-4">
+              <h3 className="text-lg font-semibold text-accent">(*) Requisitos para Bonificación</h3>
+            </div>
+            
+            <div className="grid md:grid-cols-2 gap-6 text-sm text-foreground/90">
+              <div className="space-y-3">
+                <div>
+                  <h4 className="font-semibold text-primary mb-2">Requisitos de Actualización y Cantidad</h4>
+                  <ul className="space-y-1 pl-4">
+                    <li>• Tener sus precios actualizados en el último mes.</li>
+                    <li>• Contar con más de 50 productos cargados en total.</li>
+                  </ul>
                 </div>
                 
                 <div>
+                  <h4 className="font-semibold text-primary mb-2">Requisitos de Precios y Segmentación</h4>
+                  <ul className="space-y-1 pl-4">
+                    <li>• Al menos el 75% de los productos deben estar dentro del rango de precio mínimo y máximo establecido.</li>
+                    <li>• Deben cumplir con al menos cuatro subsegmentos distintos.</li>
+                  </ul>
+                </div>
+              </div>
+              
+              <div className="space-y-3">
+                <div>
                   <h4 className="font-semibold text-primary mb-2">Otra Forma es:</h4>
-                  <p className="pl-4">• Como comprador B2B, concretar al menos USD 20.000 en compras mensuales.</p>
+                  <ul className="space-y-1 pl-4">
+                    <li>• Como comprador B2B, concretar al menos USD 20.000 en compras mensuales.</li>
+                  </ul>
                 </div>
               </div>
             </div>
           </div>
-        )}
+        </div>
       </div>
 
       {/* Request Modal */}
-      <PlanRequestModal 
-        isOpen={isModalOpen} 
-        onClose={() => setIsModalOpen(false)} 
-        planName={selectedPlan || ""} 
-      />
-    </div>
-  );
+      <PlanRequestModal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} planName={selectedPlan || ""} />
+    </div>;
 };
 export default Index;
