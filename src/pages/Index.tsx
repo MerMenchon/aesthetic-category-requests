@@ -161,7 +161,7 @@ const PLAN_CONFIGURATIONS = {
       setupCosts: ["✅ Setup PDP Premium hasta 10: c/u USD 490"],
       details: {
         discount: "0%",
-        subscription: "Mensual",
+        subscription: "Trimestral",
         bonus: "USD 950 si cumplís con las condiciones*"
       },
       description: "Ideal para empresas activas que quieren mejorar su gestión, visibilidad y rendimiento comercial."
@@ -175,7 +175,7 @@ const PLAN_CONFIGURATIONS = {
       setupCosts: ["✅ Setup Agroweb: USD 9.000", "✖️ Customización Homepage + 3 landings (no incluida)", "✅ Setup gestor interno: USD 5.000", "✅ Setup PDP Premium hasta 20: c/u USD 490"],
       details: {
         discount: "-10%",
-        subscription: "Trimestral",
+        subscription: "Semestral",
         bonus: "USD 950 si cumplís con las condiciones*"
       },
       description: "Ideal para empresas que buscan escalar, automatizar su operación y destacarse frente a la competencia."
@@ -189,7 +189,7 @@ const PLAN_CONFIGURATIONS = {
       setupCosts: ["✅ Setup Agroweb: USD 9.000", "✅ Customización Homepage + 3 landings: USD 5.900", "✅ Setup gestor interno: USD 5.000", "✅ Setup PDP Premium hasta 50: c/u USD 490 (con 50 te bonificamos el 50%)"],
       details: {
         discount: "-20%",
-        subscription: "Semestral",
+        subscription: "Anual",
         bonus: "USD 950 si cumplís con las condiciones*"
       },
       description: "Para referentes del mercado que buscan maximizar su crecimiento omnicanal y operar como socios estratégicos de Bipolos."
