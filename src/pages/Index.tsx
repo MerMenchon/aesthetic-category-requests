@@ -296,7 +296,7 @@ const Index = () => {
       {/* Hero Section */}
       <div className="container mx-auto px-4 py-12">
         <div className="text-center mb-12">
-          <h1 className="text-4xl md:text-5xl font-bold mb-6 bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
+          <h1 className="text-4xl md:text-5xl font-bold mb-6 bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent py-[3px]">
             Elige tu Plan Digital
           </h1>
           <p className="text-xl text-muted-foreground mb-4">
@@ -318,8 +318,7 @@ const Index = () => {
         </div>
 
         {/* Reference Information - Only show for Agronomías */}
-        {CONFIG.priceLevel === 1 && (
-          <div className="max-w-5xl mx-auto mb-12">
+        {CONFIG.priceLevel === 1 && <div className="max-w-5xl mx-auto mb-12">
             <div className="bg-card/80 backdrop-blur-sm border border-border rounded-lg p-6 shadow-lg">
               <div className="text-center mb-4">
                 <h3 className="text-lg font-semibold text-accent">(*) Requisitos para Bonificación</h3>
@@ -354,8 +353,7 @@ const Index = () => {
                 </div>
               </div>
             </div>
-          </div>
-        )}
+          </div>}
       </div>
 
       {/* Request Modal */}
