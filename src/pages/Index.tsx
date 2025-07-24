@@ -29,7 +29,7 @@ const PLAN_CONFIGURATIONS = {
       subtitle: "Tu primer paso al universo digital",
       price: "GRATIS",
       features: ["✔️ Marketplace B2C y B2B", "✔️ Publicación de productos en canal mayorista y minorista", "✔️ Cotizador activo y estadísticas básicas", "✔️ Participación en campañas generales de tráfico", "✔️ Soporte por email"],
-      notIncluded: ["✖️ Setup Agroweb", "✖️ Customización Homepage + 3 landings", "✖️ Setup gestor interno"],
+      notIncluded: ["✖️ Agroweb", "✖️ Gestor interno"],
       details: {},
       description: ""
     },
@@ -39,7 +39,7 @@ const PLAN_CONFIGURATIONS = {
       subtitle: "Herramientas clave para avanzar",
       price: "USD 950",
       features: ["✔️ Marketplace B2C y B2B", "✔️ Publicación ilimitada de productos", "✔️ Soporte por WhatsApp", "✔️ Plan de incentivos comerciales", "✔️ Reportes mensuales de performance", "✔️ Mejora de catálogo y acompañamiento operativo", "✔️ Participación en campañas destacadas", "✔️ Posicionamiento medio en resultados de búsqueda"],
-      notIncluded: ["✖️ Setup Agroweb", "✖️ Customización Homepage + 3 landings", "✖️ Setup gestor interno"],
+      notIncluded: ["✖️ Agroweb", "✖️ Gestor interno"],
       details: {
         discount: "0%",
         subscription: "Mensual",
