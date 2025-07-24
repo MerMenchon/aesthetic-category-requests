@@ -30,8 +30,8 @@ const PLAN_CONFIGURATIONS = {
       price: "GRATIS",
       features: ["✔️ Marketplace B2C y B2B", "✔️ Publicación de hasta 50 productos en canal mayorista y minorista", "✔️ Gestor de créditos: Crédito global y precalificado", "✔️ Servicio logísticos: Entrega a campo o PUM", "✔️ Soporte por email"],
       notIncluded: ["✖️ Agroweb", "✖️ Panel para comerciales"],
-      details: {},
-      description: ""
+      details: {-},
+      description: "-"
     },
     // 2: ÓRBITA
     2: {
