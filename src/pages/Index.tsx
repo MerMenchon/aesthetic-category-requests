@@ -83,8 +83,8 @@ const PLAN_CONFIGURATIONS = {
       title: "🌑 Gravedad",
       subtitle: "Tu primer paso al universo digital",
       price: "USD 300",
-      features: ["✔️ Marketplace B2C y B2B", "✔️ Publicación de productos en canal mayorista y minorista", "✔️ Cotizador activo y estadísticas básicas", "✔️ Participación en campañas generales de tráfico", "✔️ Soporte por email"],
-      notIncluded: ["✖️ Setup Agroweb", "✖️ Customización Homepage + 3 landings", "✖️ Setup gestor interno", "✖️ (Costo Mensual) Clean team", "✖️ (Unica vez) PDP Premium c/u", "✖️ PDP Premium en todos los canales (B2C, B2B, Agrowebs, Gestor Interno)"],
+      features: ["✔️ Marketplace B2C y B2B", "✔️ Publicación ilimitada de productos", "✔️ Soporte por WhatsApp", "✔️ Monitor de precios por molécula y Monitor de demanda: productos más buscados", "✔️ PDP Premium en todos los canales (B2C, B2B, Agrowebs, Panel para comerciales)" "✔️ Participación en campañas" "✔️ Soporte por email"],
+      notIncluded: ["✖️ Setup Agroweb", "✖️ Customización Homepage + 3 landings", "✖️ Setup gestor interno", "✖️ (Costo Mensual) Clean team", "✖️ (Unica vez) PDP Premium c/u", "✖️ PDP Premium en todos los canales (B2C, B2B, Agrowebs, Panel para comerciales)"],
       details: {
         discount: "0%",
         subscription: "-"
@@ -242,7 +242,7 @@ const getHighlightedPlan = (customerType: CustomerType): PlanType => {
 
 // Configuración central - cambiar estos valores para modificar el comportamiento
 const CONFIG = {
-  priceLevel: 2 as CustomerType,
+  priceLevel: 1 as CustomerType,
   // 1=Agronomía, 2=Empresa Chica, 3=Empresa Grande
   activePlan: 2 as PlanType // 1=Gravedad, 2=Órbita, 3=Galaxia, 4=Interestelar
 };
