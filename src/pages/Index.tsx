@@ -83,7 +83,7 @@ const PLAN_CONFIGURATIONS = {
       title: "🌑 Gravedad",
       subtitle: "Tu primer paso al universo digital",
       price: "USD 300",
-      features: ["✔️ Marketplace B2C y B2B", "✔️ Publicación ilimitada de productos", "✔️ Soporte por WhatsApp", "✔️ Monitor de precios por molécula y Monitor de demanda: productos más buscados", "✔️ PDP Premium en todos los canales (B2C, B2B, Agrowebs, Panel para comerciales)" "✔️ Participación en campañas" "✔️ Soporte por email"],
+      features: ["✔️ Marketplace B2C y B2B", "✔️ Publicación ilimitada de productos", "✔️ Soporte por WhatsApp", "✔️ Monitor de precios por molécula y Monitor de demanda: productos más buscados", "✔️ PDP Premium en todos los canales (B2C, B2B, Agrowebs, Panel para comerciales)", "✔️ Participación en campañas", "✔️ Soporte por email"],
       notIncluded: ["✖️ Setup Agroweb", "✖️ Customización Homepage + 3 landings", "✖️ Setup gestor interno", "✖️ (Costo Mensual) Clean team", "✖️ (Unica vez) PDP Premium c/u", "✖️ PDP Premium en todos los canales (B2C, B2B, Agrowebs, Panel para comerciales)"],
       details: {
         discount: "0%",
