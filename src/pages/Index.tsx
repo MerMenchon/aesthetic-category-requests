@@ -39,7 +39,7 @@ const PLAN_CONFIGURATIONS = {
       subtitle: "Herramientas clave para avanzar",
       price: "USD 950",
       features: ["✔️ Marketplace B2C y B2B", "✔️ Publicación ilimitada de productos", "✔️ Soporte por WhatsApp", "✔️ Reportes mensuales de performance", "✔️ Gestión de crédito: Créditos directos", "✔️ Insignias de vendedor", "✔️ Operador logistico: PUM (sujeto a disponibilidad)", "✔️ Monitor de precios por molécula"],
-      notIncluded: ["✖️ Agroweb", "✖️ Gestor interno"],
+      notIncluded: ["✖️ Agroweb", "✖️ Panel para comerciales"],
       details: {
         discount: "0%",
         subscription: "Mensual",
