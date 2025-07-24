@@ -242,7 +242,7 @@ const getHighlightedPlan = (customerType: CustomerType): PlanType => {
 
 // Configuración central - cambiar estos valores para modificar el comportamiento
 const CONFIG = {
-  priceLevel: 1 as CustomerType,
+  priceLevel: 2 as CustomerType,
   // 1=Agronomía, 2=Empresa Chica, 3=Empresa Grande
   activePlan: 2 as PlanType // 1=Gravedad, 2=Órbita, 3=Galaxia, 4=Interestelar
 };
@@ -296,7 +296,7 @@ const Index = () => {
       {/* Hero Section */}
       <div className="container mx-auto px-4 py-12">
         <div className="text-center mb-12">
-          <h1 className="text-4xl md:text-5xl font-bold mb-6 bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent py-[10px]">
+          <h1 className="text-4xl md:text-5xl font-bold mb-6 bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent py-[3px]">
             Elige tu Plan Digital
           </h1>
           <p className="text-xl text-muted-foreground mb-4">
