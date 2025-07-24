@@ -52,7 +52,7 @@ const PLAN_CONFIGURATIONS = {
       title: "🌌 Galaxia",
       subtitle: "Tu negocio se destaca en el canal digital",
       price: "USD 2.950",
-      features: ["✔️ Marketplace B2C y B2B", "✔️ AgroWebs", "✔️ Gestor interno", "✔️ Insignias de vendedor", "✔️ Gestión de crédito: Créditos directos", "✔️ Operador logístico: PUM (sujeto a disponibilidad)", "✔️ Participación en consorcio de compra", "✔️ Monitor de precios por molécula", "✔️ Ejecutivo de cuenta dedicado vía chat", "✔️ Operador logistico: Posibilidad de ser CDR (sujeto a disponibilidad)", "✔️ Gestión de créditos: Acceso a herramienta de gestión de riesgo", "✔️ Monitor de demanda marketplace e informe de decisión de la Agroweb", "✔️ Reuniones trimestrales de performance", "✔️ Posicionamiento destacado en newsletters", "✔️ Prioridad alta en resultados de búsqueda", "✔️ Acceso a consorcios de compra", "✔️ Mayor descuento en logística y servicios"],
+      features: ["✔️ Marketplace B2C y B2B", "✔️ AgroWebs", "✔️ Panel para comerciales", "✔️ Acceso a tu propia AgroWeb personalizada", "✔️ Panel de gestión para tus vendedores", "✔️ Reuniones trimestrales de performance", "✔️ Posicionamiento destacado en newsletters", "✔️ Prioridad alta en resultados de búsqueda", "✔️ Acceso a consorcios de compra", "✔️ Mayor descuento en logística y servicios"],
       setupCosts: ["✅ Setup Agroweb: USD 9.000", "✖️ Customización Homepage + 3 landings (no incluida)", "✅ Setup gestor interno: USD 5.000"],
       details: {
         discount: "-10%",
