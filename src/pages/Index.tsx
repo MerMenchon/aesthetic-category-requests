@@ -83,8 +83,8 @@ const PLAN_CONFIGURATIONS = {
       title: "🌑 Gravedad",
       subtitle: "Tu primer paso al universo digital",
       price: "USD 300",
-      features: ["✔️ Marketplace B2C y B2B", "✔️ Publicación ilimitada de productos", "✔️ Soporte por WhatsApp", "✔️ Monitor de precios por molécula y Monitor de demanda: productos más buscados", "✔️ PDP Premium en todos los canales (B2C, B2B, Agrowebs, Panel para comerciales)", "✔️ Participación en campañas", "✔️ Soporte por email"],
-      notIncluded: ["✖️ Agroweb", "✖️ Customización Homepage + 3 landings", "✖️ Gestor interno", "✖️ (Costo Mensual) Clean team", "✖️ (Unica vez) PDP Premium c/u", "✖️ PDP Premium en todos los canales (B2C, B2B, Agrowebs, Panel para comerciales)"],
+      features: ["✔️ Marketplace B2C y B2B", "✔️ Publicación de HASTA 50 productos en canal mayorista y minorista", "✔️ Participación en campañas generales de tráfico", "✔️ Soporte por email"],
+      notIncluded: ["✖️ Agroweb", "✖️ Customización Homepage + 3 landings", "✖️ Panel para comerciales", "✖️ (Costo Mensual) Clean team", "✖️ (Unica vez) PDP Premium c/u", "✖️ PDP Premium en todos los canales (B2C, B2B, Agrowebs, Panel para comerciales)"],
       details: {
         discount: "0%",
         subscription: "-"
@@ -97,7 +97,7 @@ const PLAN_CONFIGURATIONS = {
       subtitle: "Herramientas clave para avanzar",
       price: "USD 2.950",
       features: ["✔️ Marketplace B2C y B2B", "✔️ Publicación ilimitada de productos", "✔️ Soporte por WhatsApp", "✔️ Plan de incentivos comerciales", "✔️ Reportes mensuales de performance", "✔️ Mejora de catálogo y acompañamiento operativo", "✔️ Participación en campañas destacadas", "✔️ Posicionamiento medio en resultados de búsqueda", "✔️ PDP Premium en todos los canales (B2C, B2B, Agrowebs, Gestor Interno)"],
-      notIncluded: ["✖️ Setup Agroweb", "✖️ Customización Homepage + 3 landings", "✖️ Setup gestor interno", "✖️ (Costo Mensual) Clean team"],
+      notIncluded: ["✖️ Agroweb", "✖️ Customización Homepage + 3 landings", "✖️ Panel para comerciales", "✖️ (Costo Mensual) Clean team"],
       setupCosts: ["✅ PDP Premium c/u USD 490"],
       details: {
         discount: "0%",
