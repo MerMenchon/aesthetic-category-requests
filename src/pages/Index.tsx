@@ -53,7 +53,7 @@ const PLAN_CONFIGURATIONS = {
       subtitle: "Tu negocio se destaca en el canal digital",
       price: "USD 2.950",
       features: ["✔️ Marketplace B2C y B2B", "✔️ AgroWebs", "✔️ Panel para comerciales", "✔️ Reuniones trimestrales de performance", "✔️ Posicionamiento destacado en newsletters", "✔️ Prioridad alta en resultados de búsqueda", "✔️ Acceso a consorcios de compra", "✔️ Mayor descuento en logística y servicios", "✔️ Ejecutivo de cuenta dedicado vía chat"],
-      setupCosts: ["✅ Setup Agroweb: USD 9.000", "✖️ Customización Homepage + 3 landings (no incluida)", "✅ Setup gestor interno: USD 5.000"],
+      setupCosts: ["✅ Setup Agroweb: USD 9.000", "✖️ Customización Homepage + 3 landings (no incluida)", "✅ Setup panel para comerciales: USD 5.000"],
       details: {
         discount: "-10%",
         subscription: "Trimestral",
