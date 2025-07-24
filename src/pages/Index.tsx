@@ -31,14 +31,14 @@ const PLAN_CONFIGURATIONS = {
       features: ["✔️ Marketplace B2C y B2B", "✔️ Publicación de hasta 50 productos en canal mayorista y minorista", "✔️ Gestor de créditos: Crédito global y precalificado", "✔️ Servicio logísticos: Entrega a campo o PUM", "✔️ Soporte por email"],
       notIncluded: ["✖️ Agroweb", "✖️ Panel para comerciales"],
       details: {},
-      description: "-"
+      description: ""
     },
     // 2: ÓRBITA
     2: {
       title: "🛰️ Órbita",
       subtitle: "Herramientas clave para avanzar",
       price: "USD 950",
-      features: ["✔️ Marketplace B2C y B2B", "✔️ Publicación ilimitada de productos", "✔️ Soporte por WhatsApp", "✔️ Plan de incentivos comerciales", "✔️ Reportes mensuales de performance", "✔️ Mejora de catálogo y acompañamiento operativo", "✔️ Participación en campañas destacadas", "✔️ Posicionamiento medio en resultados de búsqueda"],
+      features: ["✔️ Marketplace B2C y B2B", "✔️ Publicación ilimitada de productos", "✔️ Soporte por WhatsApp", "✔️ Reportes mensuales de performance", "✔️ Gestión de crédito: Créditos directos", "✔️ Insignias de vendedor", "✔️ Operador logistico: PUM (sujeto a disponibilidad), "✔️ Monitor de precios por molécula"],
       notIncluded: ["✖️ Agroweb", "✖️ Gestor interno"],
       details: {
         discount: "0%",
