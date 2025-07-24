@@ -28,7 +28,7 @@ const PLAN_CONFIGURATIONS = {
       title: "🌑 Gravedad",
       subtitle: "Tu primer paso al universo digital",
       price: "GRATIS",
-      features: ["✔️ Marketplace B2C y B2B", "✔️ Publicación de productos en canal mayorista y minorista", "✔️ Cotizador activo y estadísticas básicas", "✔️ Participación en campañas generales de tráfico", "✔️ Soporte por email"],
+      features: ["✔️ Marketplace B2C y B2B", "✔️ Publicación de hasta 50 productos en canal mayorista y minorista", "✔️ Cotizador activo y estadísticas básicas", "✔️ Participación en campañas generales de tráfico", "✔️ Soporte por email"],
       notIncluded: ["✖️ Agroweb", "✖️ Gestor interno"],
       details: {},
       description: ""
