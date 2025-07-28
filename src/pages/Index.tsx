@@ -331,6 +331,7 @@ const Index = () => {
                     <ul className="space-y-1 pl-4">
                       <li>• Tener sus precios actualizados en el último mes.</li>
                       <li>• Contar con más de 50 productos cargados en total.</li>
+                      <li>• Contar con descuentos por volumen.</li>
                     </ul>
                   </div>
                   
