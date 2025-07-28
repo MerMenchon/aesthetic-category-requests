@@ -169,7 +169,7 @@ const PLAN_CONFIGURATIONS = {
       subtitle: "Tu negocio se destaca en el canal digital",
       price: "USD 4.950",
       features: ["✔️ Marketplace B2C y B2B", "✔️ AgroWebs", "✔️ Gestor interno", "✔️ Acceso a tu propia AgroWeb personalizada", "✔️ Panel de gestión para tus vendedores", "✔️ Reuniones trimestrales de performance", "✔️ Posicionamiento destacado en newsletters", "✔️ Prioridad alta en resultados de búsqueda", "✔️ Acceso a consorcios de compra", "✔️ Mayor descuento en logística y servicios", "✔️ (Costo Mensual) Clean team (OPCIONAL) USD 6.350", "✔️ 20 PDP Premium"],
-      setupCosts: ["✅ Setup Agroweb: USD 12.900", "✖️ Customización Homepage + 3 landings (no incluida)", "✅ Setup gestor interno: USD 5.000", "✅ Setup PDP Premium (pasadas las 20 bonificadas): c/u USD 490"],
+      setupCosts: ["✅ Setup Agroweb: USD 12.900", "✅ Setup gestor interno: USD 5.000", "✅ Setup PDP Premium (pasadas las 20 bonificadas): c/u USD 490"],
       details: {
         discount: "-10%",
         subscription: "Semestral",
