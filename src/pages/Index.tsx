@@ -155,7 +155,7 @@ const PLAN_CONFIGURATIONS = {
       price: "USD 2.950",
       features: ["✔️ Marketplace B2C y B2B", "✔️ Publicación ilimitada de productos", "✔️ Soporte por WhatsApp", "✔️ Plan de incentivos comerciales", "✔️ Reportes mensuales de performance", "✔️ Mejora de catálogo y acompañamiento operativo", "✔️ Participación en campañas destacadas", "✔️ Posicionamiento medio en resultados de búsqueda"],
       notIncluded: ["✖️ Setup Agroweb", "✖️ Customización Homepage + 3 landings", "✖️ Setup gestor interno"],
-      setupCosts: ["✅ Setup PDP Premium hasta 10: c/u USD 490"],
+      setupCosts: ["✅ Setup PDP Premium (pasadas las 10 bonificadas): c/u USD 490"],
       details: {
         discount: "0%",
         subscription: "Trimestral",
