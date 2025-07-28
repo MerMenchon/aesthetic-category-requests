@@ -156,9 +156,10 @@ const PLAN_CONFIGURATIONS = {
       title: "🛰️ Órbita",
       subtitle: "Herramientas clave para avanzar",
       price: "USD 2.950",
-    features: ["✔️ Marketplace B2C y B2B", "✔️ Publicación ilimitada de productos", "✔️ Soporte por WhatsApp", "✔️ Plan de incentivos comerciales", "✔️ Reportes mensuales de performance", "✔️ Mejora de catálogo y acompañamiento operativo", "✔️ Participación en campañas destacadas", "✔️ Posicionamiento medio en resultados de búsqueda", "✔️ 10 PDP Premium"],
+
+      features: ["✔️ Marketplace B2C y B2B", "✔️ Publicación ilimitada de productos", "✔️ Soporte por WhatsApp", "✔️ Participación en campañas destacadas", "✔️ Posicionamiento medio en resultados de búsqueda", "✔️ PDP Premium en canales B2C y B2B", "✔️ Gestión de créditos: crédito directo","✔️ Operador logístico: PUM (sujeto a disponibilidad)", "✔️  Monitor de precios por molécula y monitor de demanda: productos más buscados","✔️ 10 PDP Premium"],
       notIncluded: ["✖️ Agroweb", "✖️ Customización Homepage + 3 landings", "✖️ Panel para comerciales", "✖️ Clean team","✖️ Acompañamiento equipo interdisciplinario"],
-        setupCosts: ["✅ Setup PDP Premium (pasadas las 10 bonificadas): c/u USD 490"],
+      setupCosts: ["✅ Setup PDP Premium (pasadas las 10 bonificadas): c/u USD 490"],
       details: {
         discount: "0%",
         subscription: "Trimestral",
@@ -170,8 +171,8 @@ const PLAN_CONFIGURATIONS = {
       title: "🌌 Galaxia",
       subtitle: "Tu negocio se destaca en el canal digital",
       price: "USD 4.950",
-       features: ["✔️ Marketplace B2C y B2B", "✔️ AgroWebs", "✔️ Gestor interno", "✔️ Acceso a tu propia AgroWeb personalizada", "✔️ Panel de gestión para tus vendedores", "✔️ Reuniones trimestrales de performance", "✔️ Posicionamiento destacado en newsletters", "✔️ Prioridad alta en resultados de búsqueda", "✔️ Acceso a consorcios de compra", "✔️ Mayor descuento en logística y servicios", "✔️ (Costo Mensual) Clean team (OPCIONAL) USD 6.350", "✔️ 20 PDP Premium"],
-        setupCosts: ["✅ Setup Agroweb: USD 12.900", "✅ Setup gestor interno: USD 5.000", "✅ Setup PDP Premium (pasadas las 20 bonificadas): c/u USD 490"],
+      features: ["✔️ Marketplace B2C y B2B", "✔️ AgroWeb","✔️ Panel para comerciales", "✔️ Reuniones trimestrales de performance", "✔️ Posicionamiento destacado en newsletters", "✔️ Ejecutivo de cuenta dedicado via chat", "✔️ Prioridad alta en resultados de búsqueda", "✔️ Acceso a consorcios de compra", "✔️ Mayor descuento en logística y servicios", "✔️ PDP Premium en todos los canales (B2C, B2B, Agroweb, Panel para comerciales)", "✔️ Clean team (OPCIONAL) USD 6.350 (Costo mensual)", "✔️ Acceso a servicios logísticos para Agroweb","✔️ 20 PDP Premium"],
+      setupCosts: ["✅ Setup Agroweb: USD 12.900", "✅ Setup panel para comerciales: USD 5.000", "✅ Setup PDP Premium (pasadas las 20 bonificadas): c/u USD 490"],
       details: {
         discount: "-10%",
         subscription: "Semestral",
@@ -183,8 +184,9 @@ const PLAN_CONFIGURATIONS = {
       title: "🚀 Interestelar",
       subtitle: "Alianza estratégica, expansión sin límites",
       price: "USD 11.950",
-      features: ["✔️ Marketplace B2C y B2B", "✔️ AgroWebs", "✔️ Gestor interno", "✔️ Consultor/acomercial dedicado/a", "✔️ Posicionamiento premium en homepage y listados", "✔️ Campañas de co-branding con Bipolos", "✔️ Participación en proyectos y clientes validados", "✔️ Acceso ampliado a infra estructural logística (CDR y PUMs)", "✔️ Reuniones personalizadas y condiciones comerciales pref.", "✔️ (Costo Mensual) Clean team (OPCIONAL) USD 6.350", "✔️ 50 PDP Premium"],
-        setupCosts: ["✅ Setup Agroweb: USD 12.900", "✅ Customización Homepage + 3 landings: USD 5.900", "✅ Setup gestor interno: USD 5.000", "✅ Setup PDP Premium (pasadas las 50 bonificadas): c/u al 50% de USD 490"],
+      features: ["✔️ Marketplace B2C y B2B", "✔️ AgroWeb", "✔️ Panel para comerciales", "✔️ Equipo interdisciplinario dedicado (comercial, marketing y IT)", "✔️ Posicionamiento premium en homepage y listados", "✔️ Campañas de co-branding con Bipolos", "✔️ Participación en proyectos y clientes validados", "✔️ Acceso ampliado a infraestructura logística (CDR y PUMs)", "✔️ Reuniones personalizadas y condiciones comerciales preferenciales", "✔️ PDP Premium en todos los canales (B2C, B2B, Agroweb, Panel para comerciales)", "✔️ Clean team (OPCIONAL)USD 6.350 (Costo mensual)","✔️ Monitor de demanda marketplace y agroweb","✔️ Monitor de precios e informe de decisión agrodigital","✔️ 50 PDP Premium"],
+      setupCosts: ["✅ Setup Agroweb: USD 12.900", "✅ Customización Homepage + 3 landings: USD 5.900", "✅ Setup panel para comerciales: USD 5.000",  "✅ Setup PDP Premium (pasadas las 50 bonificadas): c/u al 50% de USD 490"],
+
       details: {
         discount: "-20%",
         subscription: "Anual",
