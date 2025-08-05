@@ -100,7 +100,7 @@ const PLAN_CONFIGURATIONS = {
       title: "🛰️ Órbita",
       subtitle: "Herramientas clave para avanzar",
       price: "USD 2.950",
-      features: ["✔️ Marketplace B2C y B2B", "✔️ Publicación ilimitada de productos", "✔️ Soporte por WhatsApp", "✔️ Posicionamiento medio en resultados de búsqueda", "✔️ PDP Premium en canales B2C y B2B","✔️ Gestión de créditos: crédito directo","✔️ Operador logístico: PUM (sujeto a disponibilidad)", "✔️  Monitor de precios por molécula y monitor de demanda: productos más buscados"],
+      features: ["✔️ Marketplace B2C y B2B", "✔️ Publicación ilimitada de productos", "✔️ Soporte por WhatsApp", "✔️ PDP Premium en canales B2C y B2B","✔️ Gestión de créditos: crédito directo","✔️ Operador logístico: PUM (sujeto a disponibilidad)", "✔️  Monitor de precios por molécula y monitor de demanda: productos más buscados"],
       notIncluded: ["✖️ Agroweb", "✖️ Customización Homepage + 3 landings", "✖️ Panel para comerciales", "✖️ Clean team","✖️ Acompañamiento equipo interdisciplinario"],
       setupCosts: ["✅ PDP Premium c/u USD 490"],
       details: {
@@ -157,7 +157,7 @@ const PLAN_CONFIGURATIONS = {
       subtitle: "Herramientas clave para avanzar",
       price: "USD 2.950",
 
-      features: ["✔️ Marketplace B2C y B2B", "✔️ Publicación ilimitada de productos", "✔️ Soporte por WhatsApp", "✔️ Posicionamiento medio en resultados de búsqueda", "✔️ PDP Premium en canales B2C y B2B", "✔️ Gestión de créditos: crédito directo","✔️ Operador logístico: PUM (sujeto a disponibilidad)", "✔️  Monitor de precios por molécula y monitor de demanda: productos más buscados","✔️ 10 PDP Premium"],
+      features: ["✔️ Marketplace B2C y B2B", "✔️ Publicación ilimitada de productos", "✔️ Soporte por WhatsApp",  "✔️ PDP Premium en canales B2C y B2B", "✔️ Gestión de créditos: crédito directo","✔️ Operador logístico: PUM (sujeto a disponibilidad)", "✔️  Monitor de precios por molécula y monitor de demanda: productos más buscados","✔️ 10 PDP Premium"],
       notIncluded: ["✖️ Agroweb", "✖️ Customización Homepage + 3 landings", "✖️ Panel para comerciales", "✖️ Clean team","✖️ Acompañamiento equipo interdisciplinario"],
       setupCosts: ["✅ Setup PDP Premium (pasadas las 10 bonificadas): c/u USD 490"],
       details: {
