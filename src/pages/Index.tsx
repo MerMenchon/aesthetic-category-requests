@@ -290,6 +290,11 @@ const Index = () => {
     }
   };
 
+  const getCurrentPlanName = () => {
+    const currentPlan = plans.find((_, index) => index === CONFIG.activePlan - 1);
+    return currentPlan ? currentPlan.title : "Plan actual";
+  };
+
   // Función para manejar la selección de planes
   const handlePlanSelect = (planTitle: string) => {
     setSelectedPlan(planTitle);
@@ -365,6 +370,8 @@ const Index = () => {
         isOpen={isModalOpen} 
         onClose={() => setIsModalOpen(false)} 
         planName={selectedPlan || ""} 
+        currentPlan={getCurrentPlanName()}
+        userId={1}
       />
     </div>;
 };

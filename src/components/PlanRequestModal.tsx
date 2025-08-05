@@ -4,23 +4,46 @@ import { Button } from "@/components/ui/button";
 import { Textarea } from "@/components/ui/textarea";
 import { useToast } from "@/hooks/use-toast";
 import { GLOBALS } from "@/config/globals";
+import { sendPlanChangeRequest } from "@/utils/httpService";
 
 interface PlanRequestModalProps {
   isOpen: boolean;
   onClose: () => void;
   planName: string;
+  currentPlan: string;
+  userId: number;
 }
 
-export const PlanRequestModal = ({ isOpen, onClose, planName }: PlanRequestModalProps) => {
+export const PlanRequestModal = ({ isOpen, onClose, planName, currentPlan, userId }: PlanRequestModalProps) => {
   const [userMessage, setUserMessage] = useState("");
+  const [isLoading, setIsLoading] = useState(false);
   const { toast } = useToast();
 
-  const handleConfirm = () => {
-    toast({
-      title: "¡Solicitud enviada!",
-      description: `Tu solicitud de cambio al plan ${planName} ha sido enviada exitosamente.`,
-    });
-    onClose();
+  const handleConfirm = async () => {
+    setIsLoading(true);
+    
+    try {
+      await sendPlanChangeRequest({
+        userId,
+        currentPlan,
+        requestedPlan: planName,
+        userMessage,
+      });
+      
+      toast({
+        title: "¡Solicitud enviada!",
+        description: `Tu solicitud de cambio al plan ${planName} ha sido enviada exitosamente.`,
+      });
+      onClose();
+    } catch (error) {
+      toast({
+        title: "Error al enviar solicitud",
+        description: "Ocurrió un error al procesar tu solicitud. Por favor, intenta nuevamente.",
+        variant: "destructive",
+      });
+    } finally {
+      setIsLoading(false);
+    }
   };
 
   return (
@@ -84,9 +107,10 @@ export const PlanRequestModal = ({ isOpen, onClose, planName }: PlanRequestModal
             </Button>
             <Button
               onClick={handleConfirm}
-              className="flex-1 bg-primary hover:bg-primary/90 text-primary-foreground"
+              disabled={isLoading}
+              className="flex-1 bg-primary hover:bg-primary/90 text-primary-foreground disabled:opacity-50"
             >
-              Confirmar Solicitud
+              {isLoading ? "Enviando..." : "Confirmar Solicitud"}
             </Button>
           </div>
         </div>
