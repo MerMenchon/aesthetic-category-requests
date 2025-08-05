@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { PlanCard } from "@/components/PlanCard";
-import { PlanRequestModal, type UserData } from "@/components/PlanRequestModal";
+import { PlanRequestModal } from "@/components/PlanRequestModal";
 
 // Define customer types and plan types
 type CustomerType = 1 | 2 | 3; // 1: Agronomía, 2: Empresa Chica, 3: Empresa Grande
@@ -256,16 +256,6 @@ const Index = () => {
   const [selectedPlan, setSelectedPlan] = useState<string | null>(null);
   const [isModalOpen, setIsModalOpen] = useState(false);
 
-  // Mock user data - In production, this would come from Java integration
-  const mockUserData: UserData = {
-    userId: "user123",
-    userName: "Juan Pérez",
-    userEmail: "juan.perez@empresa.com",
-    customerEmail: "cliente@empresa.com",
-    companyName: "Empresa Demo S.A.",
-    companyCuit: "30-12345678-9",
-    userMessage: "Solicitud de cambio de plan desde la plataforma"
-  };
 
   // Obtener el plan activo dinámicamente basado en CONFIG
   const currentUserPlan = getPlanNameByIndex(CONFIG.activePlan);
@@ -375,8 +365,6 @@ const Index = () => {
         isOpen={isModalOpen} 
         onClose={() => setIsModalOpen(false)} 
         planName={selectedPlan || ""} 
-        currentPlan={currentUserPlan || "Sin plan"}
-        userData={mockUserData}
       />
     </div>;
 };
