@@ -58,8 +58,9 @@ export const PlanRequestModal = ({ isOpen, onClose, planName, currentPlan }: Pla
           <p className="text-foreground">
             Estás por solicitar el cambio al plan <strong>{planName}</strong>.
           </p>
-          
-          
+                    <p className="text-sm text-muted-foreground">
+              En los próximos minutos vas a recibir un correo de confirmación con los datos de solicitud del nuevo plan.      
+           </p>
           <p className="text-sm text-muted-foreground">
             Si tenés alguna duda o querés hablar con alguien de nuestro equipo, podés contactarte con{" "}
             <a 
