@@ -114,7 +114,7 @@ const PLAN_CONFIGURATIONS = {
       title: "🌌 Galaxia",
       subtitle: "Tu negocio se destaca en el canal digital",
       price: "USD 4.950",
-      features: ["✔️ Marketplace B2C y B2B", "✔️ AgroWeb","✔️ Panel para comerciales", "✔️ Reuniones trimestrales de performance", "✔️ Posicionamiento destacado en newsletters", "✔️ Ejecutivo de cuenta dedicado via chat", "✔️ Prioridad alta en resultados de búsqueda", "✔️ Acceso a consorcios de compra", "✔️ Mayor descuento en logística y servicios", "✔️ PDP Premium en todos los canales (B2C, B2B, Agroweb, Panel para comerciales)", "✔️ Clean team (OPCIONAL) USD 6.350 (Costo mensual)", "✔️ Acceso a servicios logísticos para Agroweb"],
+      features: ["✔️ Marketplace B2C y B2B", "✔️ AgroWeb","✔️ Panel para comerciales", "✔️ Reuniones trimestrales de performance",  "✔️ Ejecutivo de cuenta dedicado via chat", "✔️ Acceso a consorcios de compra", "✔️ Mayor descuento en logística y servicios", "✔️ PDP Premium en todos los canales (B2C, B2B, Agroweb, Panel para comerciales)", "✔️ Clean team (OPCIONAL) USD 6.350 (Costo mensual)", "✔️ Acceso a servicios logísticos para Agroweb"],
       setupCosts: ["✅ Setup Agroweb: USD 12.900", "✅ Setup panel para comerciales: USD 5.000", "✅ PDP Premium c/u USD 490"],
       details: {
         discount: "-10%",
@@ -171,7 +171,7 @@ const PLAN_CONFIGURATIONS = {
       title: "🌌 Galaxia",
       subtitle: "Tu negocio se destaca en el canal digital",
       price: "USD 4.950",
-      features: ["✔️ Marketplace B2C y B2B", "✔️ AgroWeb","✔️ Panel para comerciales", "✔️ Reuniones trimestrales de performance", "✔️ Posicionamiento destacado en newsletters", "✔️ Ejecutivo de cuenta dedicado via chat", "✔️ Prioridad alta en resultados de búsqueda", "✔️ Acceso a consorcios de compra", "✔️ Mayor descuento en logística y servicios", "✔️ PDP Premium en todos los canales (B2C, B2B, Agroweb, Panel para comerciales)", "✔️ Clean team (OPCIONAL) USD 6.350 (Costo mensual)", "✔️ Acceso a servicios logísticos para Agroweb","✔️ 20 PDP Premium"],
+      features: ["✔️ Marketplace B2C y B2B", "✔️ AgroWeb","✔️ Panel para comerciales", "✔️ Reuniones trimestrales de performance", "✔️ Ejecutivo de cuenta dedicado via chat",  "✔️ Acceso a consorcios de compra", "✔️ Mayor descuento en logística y servicios", "✔️ PDP Premium en todos los canales (B2C, B2B, Agroweb, Panel para comerciales)", "✔️ Clean team (OPCIONAL) USD 6.350 (Costo mensual)", "✔️ Acceso a servicios logísticos para Agroweb","✔️ 20 PDP Premium"],
       setupCosts: ["✅ Setup Agroweb: USD 12.900", "✅ Setup panel para comerciales: USD 5.000", "✅ Setup PDP Premium (pasadas las 20 bonificadas): c/u USD 490"],
       details: {
         discount: "-10%",
