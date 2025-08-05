@@ -1,100 +1,97 @@
 import { useState } from "react";
 import { Dialog, DialogContent, DialogHeader, DialogTitle } from "@/components/ui/dialog";
 import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
-import { Label } from "@/components/ui/label";
-import { Textarea } from "@/components/ui/textarea";
 import { useToast } from "@/hooks/use-toast";
+import { sendPlanChangeNotification, type PlanChangeEmailData } from "@/utils/emailService";
+import { GLOBALS } from "@/config/globals";
+
+export interface UserData {
+  userId: string;
+  userName: string;
+  userEmail: string;
+  customerEmail: string;
+  companyName: string;
+  companyCuit: string;
+  userMessage?: string;
+}
 
 interface PlanRequestModalProps {
   isOpen: boolean;
   onClose: () => void;
   planName: string;
+  currentPlan: string;
+  userData: UserData;
 }
 
-export const PlanRequestModal = ({ isOpen, onClose, planName }: PlanRequestModalProps) => {
-  const [formData, setFormData] = useState({
-    name: "",
-    email: "",
-    company: "",
-    message: ""
-  });
+export const PlanRequestModal = ({ isOpen, onClose, planName, currentPlan, userData }: PlanRequestModalProps) => {
+  const [isLoading, setIsLoading] = useState(false);
   const { toast } = useToast();
 
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
+  const handleConfirm = async () => {
+    setIsLoading(true);
     
-    // Simulate form submission
-    toast({
-      title: "¡Solicitud enviada!",
-      description: `Gracias por tu interés en el plan ${planName}. Te contactaremos pronto.`,
-    });
-    
-    // Reset form and close modal
-    setFormData({ name: "", email: "", company: "", message: "" });
-    onClose();
-  };
+    try {
+      const emailData: PlanChangeEmailData = {
+        ...userData,
+        currentPlan,
+        newPlan: planName,
+      };
 
-  const handleInputChange = (field: string, value: string) => {
-    setFormData(prev => ({ ...prev, [field]: value }));
+      const success = await sendPlanChangeNotification(emailData);
+      
+      if (success) {
+        toast({
+          title: "¡Solicitud enviada!",
+          description: `Tu solicitud de cambio al plan ${planName} ha sido enviada. Recibirás un correo de confirmación en los próximos minutos.`,
+        });
+        onClose();
+      } else {
+        toast({
+          title: "Error",
+          description: "Hubo un problema al enviar la solicitud. Por favor, intenta nuevamente.",
+          variant: "destructive",
+        });
+      }
+    } catch (error) {
+      toast({
+        title: "Error",
+        description: "Hubo un problema al enviar la solicitud. Por favor, intenta nuevamente.",
+        variant: "destructive",
+      });
+    } finally {
+      setIsLoading(false);
+    }
   };
 
   return (
     <Dialog open={isOpen} onOpenChange={onClose}>
       <DialogContent className="sm:max-w-md bg-card border-border">
         <DialogHeader>
-          <DialogTitle className="text-xl font-bold text-accent">
-            Solicitar Plan {planName}
+          <DialogTitle className="text-xl font-bold text-accent flex items-center gap-2">
+            🚀 ¿Querés avanzar con el cambio de plan?
           </DialogTitle>
         </DialogHeader>
         
-        <form onSubmit={handleSubmit} className="space-y-4">
-          <div className="space-y-2">
-            <Label htmlFor="name" className="text-foreground">Nombre completo</Label>
-            <Input
-              id="name"
-              value={formData.name}
-              onChange={(e) => handleInputChange("name", e.target.value)}
-              required
-              className="bg-input border-border focus:border-accent"
-              placeholder="Tu nombre completo"
-            />
-          </div>
+        <div className="space-y-4">
+          <p className="text-foreground">
+            Estás por solicitar el cambio al plan <strong>{planName}</strong>.
+          </p>
           
-          <div className="space-y-2">
-            <Label htmlFor="email" className="text-foreground">Email</Label>
-            <Input
-              id="email"
-              type="email"
-              value={formData.email}
-              onChange={(e) => handleInputChange("email", e.target.value)}
-              required
-              className="bg-input border-border focus:border-accent"
-              placeholder="tu@email.com"
-            />
-          </div>
+          <p className="text-muted-foreground text-sm">
+            En los próximos minutos vas a recibir un correo de confirmación del nuevo plan.
+          </p>
           
-          <div className="space-y-2">
-            <Label htmlFor="company" className="text-foreground">Empresa</Label>
-            <Input
-              id="company"
-              value={formData.company}
-              onChange={(e) => handleInputChange("company", e.target.value)}
-              className="bg-input border-border focus:border-accent"
-              placeholder="Nombre de tu empresa"
-            />
-          </div>
-          
-          <div className="space-y-2">
-            <Label htmlFor="message" className="text-foreground">Mensaje adicional</Label>
-            <Textarea
-              id="message"
-              value={formData.message}
-              onChange={(e) => handleInputChange("message", e.target.value)}
-              className="bg-input border-border focus:border-accent min-h-[80px]"
-              placeholder="Cuéntanos más sobre tu proyecto..."
-            />
-          </div>
+          <p className="text-sm text-muted-foreground">
+            Si tenés alguna duda o querés hablar con alguien de nuestro equipo, podés contactarte con{" "}
+            <a 
+              href={GLOBALS.CUSTOMER_SUPPORT_URL} 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="text-primary hover:text-primary/80 underline"
+            >
+              Atención al Cliente
+            </a>.
+          </p>
           
           <div className="flex gap-3 pt-4">
             <Button
@@ -102,17 +99,19 @@ export const PlanRequestModal = ({ isOpen, onClose, planName }: PlanRequestModal
               variant="outline"
               onClick={onClose}
               className="flex-1 border-border hover:bg-secondary"
+              disabled={isLoading}
             >
               Cancelar
             </Button>
             <Button
-              type="submit"
+              onClick={handleConfirm}
               className="flex-1 bg-primary hover:bg-primary/90 text-primary-foreground"
+              disabled={isLoading}
             >
-              Enviar Solicitud
+              {isLoading ? "Enviando..." : "Confirmar Solicitud"}
             </Button>
           </div>
-        </form>
+        </div>
       </DialogContent>
     </Dialog>
   );
