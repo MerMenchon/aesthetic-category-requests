@@ -42,7 +42,7 @@ const PLAN_CONFIGURATIONS = {
       title: "🛰️ Órbita",
       subtitle: "Herramientas clave para avanzar",
       price: "USD 950",
-      features: ["✔️ Marketplace B2C y B2B", "✔️ Publicación ilimitada de productos", "✔️ Soporte por WhatsApp", "✔️ Reportes mensuales de performance", "✔️ Gestión de crédito: Créditos directos", "✔️ Insignias de vendedor", "✔️ Operador logistico: PUM (sujeto a disponibilidad)", "✔️ Participación en consorcio de compra", "✔️ Monitor de precios por molécula"],
+      features: ["✔️ Marketplace B2C y B2B", "✔️ Publicación ilimitada de productos", "✔️ Soporte por WhatsApp", "✔️ Gestión de crédito: Créditos directos", "✔️ Insignias de vendedor", "✔️ Operador logistico: PUM (sujeto a disponibilidad)", "✔️ Participación en consorcio de compra", "✔️ Monitor de precios por molécula"],
       notIncluded: ["✖️ Agroweb", "✖️ Panel para comerciales"],
       details: {
         discount: "0%",
@@ -70,7 +70,7 @@ const PLAN_CONFIGURATIONS = {
       title: "🚀 Interestelar",
       subtitle: "Alianza estratégica, expansión sin límites",
       price: "USD 4.950",
-      features: ["✔️ Marketplace B2C y B2B", "✔️ AgroWeb", "✔️ Panel para comerciales", "✔️ Ejecutivo de cuenta dedicado con acceso telefónico", "✔️ Posicionamiento premium en homepage y listados", "✔️ Campañas de co-branding con Bipolos", "✔️ Participación en proyectos y clientes validados", "✔️ Acceso ampliado a infraestructura logística (CDR y PUMs)", "✔️ Reuniones personalizadas y condiciones comerciales pref.", "✔️ Clean team"],
+      features: ["✔️ Marketplace B2C y B2B", "✔️ AgroWeb", "✔️ Panel para comerciales", "✔️ Ejecutivo de cuenta dedicado con acceso telefónico", "✔️ Posicionamiento premium en homepage y listados", "✔️ Campañas de co-branding con Bipolos", "✔️ Acceso ampliado a infraestructura logística (CDR y PUMs)", "✔️ Reuniones personalizadas y condiciones comerciales pref.", "✔️ Clean team"],
       setupCosts: ["✅ Setup Agroweb: USD 9.000", "✅ Customización Homepage + 3 landings: USD 5.900", "✅ Setup gestor interno: USD 5.000"],
       details: {
         discount: "-20%",
