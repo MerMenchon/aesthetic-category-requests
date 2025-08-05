@@ -371,7 +371,6 @@ const Index = () => {
         onClose={() => setIsModalOpen(false)} 
         planName={selectedPlan || ""} 
         currentPlan={getCurrentPlanName()}
-        userId={1}
       />
     </div>;
 };

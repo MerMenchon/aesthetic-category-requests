@@ -1,12 +1,12 @@
 interface PlanChangeRequest {
-  userId: number;
+  option: string;
   currentPlan: string;
   requestedPlan: string;
   userMessage: string;
 }
 
 export const sendPlanChangeRequest = async (data: PlanChangeRequest): Promise<void> => {
-  const url = `${window.location.origin}${window.location.pathname}?option=envioDeMail`;
+  const url = `${window.location.origin}${window.location.pathname}`;
   
   const response = await fetch(url, {
     method: 'POST',

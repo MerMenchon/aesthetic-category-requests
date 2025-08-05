@@ -11,10 +11,9 @@ interface PlanRequestModalProps {
   onClose: () => void;
   planName: string;
   currentPlan: string;
-  userId: number;
 }
 
-export const PlanRequestModal = ({ isOpen, onClose, planName, currentPlan, userId }: PlanRequestModalProps) => {
+export const PlanRequestModal = ({ isOpen, onClose, planName, currentPlan }: PlanRequestModalProps) => {
   const [userMessage, setUserMessage] = useState("");
   const [isLoading, setIsLoading] = useState(false);
   const { toast } = useToast();
@@ -24,7 +23,7 @@ export const PlanRequestModal = ({ isOpen, onClose, planName, currentPlan, userI
     
     try {
       await sendPlanChangeRequest({
-        userId,
+        option: "envioDeMail",
         currentPlan,
         requestedPlan: planName,
         userMessage,
