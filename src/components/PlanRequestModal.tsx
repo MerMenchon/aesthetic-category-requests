@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Dialog, DialogContent, DialogHeader, DialogTitle } from "@/components/ui/dialog";
 import { Button } from "@/components/ui/button";
+import { Textarea } from "@/components/ui/textarea";
 import { useToast } from "@/hooks/use-toast";
 import { sendPlanChangeNotification, type PlanChangeEmailData } from "@/utils/emailService";
 import { GLOBALS } from "@/config/globals";
@@ -25,6 +26,7 @@ interface PlanRequestModalProps {
 
 export const PlanRequestModal = ({ isOpen, onClose, planName, currentPlan, userData }: PlanRequestModalProps) => {
   const [isLoading, setIsLoading] = useState(false);
+  const [userMessage, setUserMessage] = useState("");
   const { toast } = useToast();
 
   const handleConfirm = async () => {
@@ -33,6 +35,7 @@ export const PlanRequestModal = ({ isOpen, onClose, planName, currentPlan, userD
     try {
       const emailData: PlanChangeEmailData = {
         ...userData,
+        userMessage: userMessage.trim() || undefined,
         currentPlan,
         newPlan: planName,
       };
@@ -92,6 +95,30 @@ export const PlanRequestModal = ({ isOpen, onClose, planName, currentPlan, userD
               Atención al Cliente
             </a>.
           </p>
+          
+          <div className="space-y-3">
+            <div>
+              <label htmlFor="user-message" className="text-sm text-muted-foreground block mb-2">
+                Mensaje adicional (opcional):
+              </label>
+              <Textarea
+                id="user-message"
+                placeholder="Escribí un mensaje adicional si querés..."
+                value={userMessage}
+                onChange={(e) => {
+                  if (e.target.value.length <= 300) {
+                    setUserMessage(e.target.value);
+                  }
+                }}
+                maxLength={300}
+                className="min-h-[80px] resize-none"
+                disabled={isLoading}
+              />
+              <div className="text-xs text-muted-foreground mt-1 text-right">
+                {userMessage.length}/300 caracteres
+              </div>
+            </div>
+          </div>
           
           <div className="flex gap-3 pt-4">
             <Button
