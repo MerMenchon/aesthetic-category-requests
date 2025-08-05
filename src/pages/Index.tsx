@@ -257,8 +257,6 @@ const Index = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
 
 
-  // Obtener el plan activo dinámicamente basado en CONFIG
-  const currentUserPlan = getPlanNameByIndex(CONFIG.activePlan);
 
   // Usar configurePlans con parámetros desde CONFIG y desde const highlightedPlan
   const plans = configurePlans(CONFIG.priceLevel, highlightedPlan);
@@ -290,10 +288,6 @@ const Index = () => {
     }
   };
 
-  const getCurrentPlanName = () => {
-    const currentPlan = plans.find((_, index) => index === CONFIG.activePlan - 1);
-    return currentPlan ? currentPlan.title : "Plan actual";
-  };
 
   // Función para manejar la selección de planes
   const handlePlanSelect = (planTitle: string) => {
@@ -310,11 +304,11 @@ const Index = () => {
           <p className="text-xl text-muted-foreground mb-4">
             Encuentra el plan perfecto para hacer crecer tu negocio
           </p>
-          {currentUserPlan && <div className="inline-flex items-center gap-2 px-4 py-2 bg-accent/20 rounded-full">
+          <div className="inline-flex items-center gap-2 px-4 py-2 bg-accent/20 rounded-full">
               <span className="text-sm font-semibold text-accent">
-                Plan actual: {currentUserPlan}
+                Plan actual: {getPlanNameByIndex(CONFIG.activePlan)}
               </span>
-            </div>}
+            </div>
         </div>
 
         {/* Plans Grid */}
@@ -370,7 +364,7 @@ const Index = () => {
         isOpen={isModalOpen} 
         onClose={() => setIsModalOpen(false)} 
         planName={selectedPlan || ""} 
-        currentPlan={getCurrentPlanName()}
+        currentPlan={getPlanNameByIndex(CONFIG.activePlan)}
       />
     </div>;
 };
