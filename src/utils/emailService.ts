@@ -62,7 +62,7 @@ Si tenés alguna duda, podés responder directamente a este mensaje o comunicart
     const emailData = {
       to: GLOBALS.NOTIFICATION_EMAIL,
       cc: data.customerEmail,
-      subject: `Nueva solicitud de cambio de plan - ${data.userName}`,
+      subject: `Solicitud de cambio de plan - ${data.companyCuit}`,
       text: emailContent,
       html: emailContent.replace(/\n/g, '<br>')
     };
