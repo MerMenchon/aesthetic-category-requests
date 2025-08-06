@@ -5,12 +5,6 @@ import Index from "./pages/Index";
 
 const queryClient = new QueryClient();
 
-const forcedProps = {
-  priceLevel: "1",
-  activePlan: "2",
-  wslink: "https://wa.me/5492494521359",
-};
-
 interface AppProps {
   priceLevel?: string;
   activePlan?: string;
@@ -18,11 +12,7 @@ interface AppProps {
 }
 
 const App = (props: AppProps = {}) => {
-  const { 
-    priceLevel = forcedProps.priceLevel, 
-    activePlan = forcedProps.activePlan, 
-    wslink = forcedProps.wslink 
-  } = props;
+  const { priceLevel, activePlan, wslink } = props;
 
   return (
     <QueryClientProvider client={queryClient}>
