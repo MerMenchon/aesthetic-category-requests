@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Dialog, DialogContent, DialogHeader, DialogTitle } from "@/components/ui/dialog";
+import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription } from "@/components/ui/dialog";
 import { Button } from "@/components/ui/button";
 import { Textarea } from "@/components/ui/textarea";
 import { useToast } from "@/hooks/use-toast";
@@ -52,6 +52,9 @@ export const PlanRequestModal = ({ isOpen, onClose, planName, currentPlan }: Pla
           <DialogTitle className="text-xl font-bold text-accent flex items-center gap-2">
             🚀 ¿Querés avanzar con el cambio de plan?
           </DialogTitle>
+          <DialogDescription>
+            Formulario para solicitar el cambio de plan. Completá los datos y enviá tu solicitud.
+          </DialogDescription>
         </DialogHeader>
         
         <div className="space-y-4">
