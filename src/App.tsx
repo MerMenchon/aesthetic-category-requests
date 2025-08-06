@@ -17,8 +17,12 @@ interface AppProps {
   wslink?: string;
 }
 
-const App = (props: AppProps = forcedProps) => {
-  const { priceLevel, activePlan, wslink } = props;
+const App = (props: AppProps = {}) => {
+  const { 
+    priceLevel = forcedProps.priceLevel, 
+    activePlan = forcedProps.activePlan, 
+    wslink = forcedProps.wslink 
+  } = props;
 
   return (
     <QueryClientProvider client={queryClient}>

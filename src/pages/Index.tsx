@@ -255,48 +255,12 @@ const Index = ({ priceLevel: priceLevelProp, activePlan: activePlanProp, wslink 
   const [selectedPlan, setSelectedPlan] = useState<string | null>(null);
   const [isModalOpen, setIsModalOpen] = useState(false);
 
-  // 🔍 DEBUG: Props recibidas
-  console.log("🔍 Props recibidas:", { 
-    priceLevelProp, 
-    activePlanProp, 
-    wslink 
-  });
-
   // Parse props and set defaults. Fallback to Empresa Grande (3), Plan Interestelar (4).
-  const priceLevelValidation = priceLevelProp && /^[1-3]$/.test(priceLevelProp);
-  const activePlanValidation = activePlanProp && /^[1-4]$/.test(activePlanProp);
-  
-  // 🔍 DEBUG: Validaciones regex
-  console.log("🔍 Validaciones regex:", { 
-    priceLevelProp,
-    priceLevelValidation,
-    activePlanProp,
-    activePlanValidation
-  });
-
-  const priceLevel: CustomerType = priceLevelValidation ? parseInt(priceLevelProp, 10) as CustomerType : 3;
-  const activePlan: PlanType = activePlanValidation ? parseInt(activePlanProp, 10) as PlanType : 4;
+  const priceLevel: CustomerType = priceLevelProp && /^[1-3]$/.test(priceLevelProp) ? parseInt(priceLevelProp, 10) as CustomerType : 3;
+  const activePlan: PlanType = activePlanProp && /^[1-4]$/.test(activePlanProp) ? parseInt(activePlanProp, 10) as PlanType : 4;
   const finalWslink = wslink || GLOBALS.CUSTOMER_SUPPORT_URL;
 
-  // 🔍 DEBUG: Valores finales parseados
-  console.log("🔍 Valores finales:", { 
-    priceLevel, 
-    activePlan,
-    customerType: CUSTOMER_TYPE_MAPPING[priceLevel],
-    activePlanName: PLAN_MAPPING[activePlan]
-  });
-
   const highlightedPlan = getHighlightedPlan(priceLevel);
-
-  // 🔍 DEBUG: Plan resaltado
-  console.log("🔍 Plan configuration:", { 
-    priceLevel,
-    customerType: CUSTOMER_TYPE_MAPPING[priceLevel],
-    highlightedPlan,
-    highlightedPlanName: PLAN_MAPPING[highlightedPlan],
-    activePlan,
-    activePlanName: PLAN_MAPPING[activePlan]
-  });
 
   // Usar configurePlans con parámetros finales
   const plans = configurePlans(priceLevel, highlightedPlan);
