@@ -3,7 +3,6 @@ import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription } f
 import { Button } from "@/components/ui/button";
 import { Textarea } from "@/components/ui/textarea";
 import { useToast } from "@/hooks/use-toast";
-import { GLOBALS } from "@/config/globals";
 import { sendPlanChangeRequest } from "@/utils/httpService";
 
 interface PlanRequestModalProps {
@@ -69,7 +68,7 @@ export const PlanRequestModal = ({ isOpen, onClose, planName, currentPlan, wslin
           <p className="text-sm text-muted-foreground">
             Si tenés alguna duda o querés hablar con alguien de nuestro equipo, podés contactarte con{" "}
             <a 
-              href={wslink || GLOBALS.CUSTOMER_SUPPORT_URL} 
+              href={wslink || "https://wa.me/5492494521359"} 
               target="_blank" 
               rel="noopener noreferrer"
               className="text-primary hover:text-primary/80 underline"

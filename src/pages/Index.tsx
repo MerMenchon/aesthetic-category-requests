@@ -1,7 +1,6 @@
 import { useState } from "react";
 import { PlanCard } from "@/components/PlanCard";
 import { PlanRequestModal } from "@/components/PlanRequestModal";
-import { GLOBALS } from "@/config/globals";
 
 // Define customer types and plan types
 type CustomerType = 1 | 2 | 3; // 1: Agronomía, 2: Empresa Chica, 3: Empresa Grande
@@ -258,7 +257,7 @@ const Index = ({ priceLevel: priceLevelProp, activePlan: activePlanProp, wslink 
   // Parse props and set defaults. Fallback to Empresa Grande (3), Plan Interestelar (4).
   const priceLevel: CustomerType = priceLevelProp && /^[1-3]$/.test(priceLevelProp) ? parseInt(priceLevelProp, 10) as CustomerType : 3;
   const activePlan: PlanType = activePlanProp && /^[1-4]$/.test(activePlanProp) ? parseInt(activePlanProp, 10) as PlanType : 4;
-  const finalWslink = wslink || GLOBALS.CUSTOMER_SUPPORT_URL;
+  const finalWslink = wslink || "https://wa.me/5492494521359";
 
   const highlightedPlan = getHighlightedPlan(priceLevel);
 
