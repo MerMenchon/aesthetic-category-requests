@@ -243,13 +243,6 @@ const getHighlightedPlan = (customerType: CustomerType): PlanType => {
   return customerType === 3 ? 4 : 3;
 };
 
-// Configuración central - cambiar estos valores para modificar el comportamiento
-const CONFIG = {
-  priceLevel: 1 as CustomerType, // 1=Agronomía, 2=Empresa Chica, 3=Empresa Grande
-  activePlan: 3 as PlanType // 1=Gravedad, 2=Órbita, 3=Galaxia, 4=Interestelar
-
-};
-
 interface IndexProps {
   priceLevel?: string;
   activePlan?: string;
@@ -258,21 +251,19 @@ interface IndexProps {
 
 //Si es agronomia o empresa chica el recomendado es Galaxia
 //Si es empresa grande, el recomendado es interestelar
-const Index = ({ priceLevel, activePlan, wslink }: IndexProps) => {
+const Index = ({ priceLevel: priceLevelProp, activePlan: activePlanProp, wslink }: IndexProps) => {
   const [selectedPlan, setSelectedPlan] = useState<string | null>(null);
   const [isModalOpen, setIsModalOpen] = useState(false);
 
-  // Use props or fallback to CONFIG
-  const finalPriceLevel = (priceLevel ? parseInt(priceLevel) : CONFIG.priceLevel) as CustomerType;
-  const finalActivePlan = (activePlan ? parseInt(activePlan) : CONFIG.activePlan) as PlanType;
+  // Parse props and set defaults. Fallback to Empresa Grande (3), Plan Interestelar (4).
+  const priceLevel: CustomerType = priceLevelProp && /^[1-3]$/.test(priceLevelProp) ? parseInt(priceLevelProp, 10) as CustomerType : 3;
+  const activePlan: PlanType = activePlanProp && /^[1-4]$/.test(activePlanProp) ? parseInt(activePlanProp, 10) as PlanType : 4;
   const finalWslink = wslink || GLOBALS.CUSTOMER_SUPPORT_URL;
 
-  const highlightedPlan = getHighlightedPlan(finalPriceLevel);
-
-
+  const highlightedPlan = getHighlightedPlan(priceLevel);
 
   // Usar configurePlans con parámetros finales
-  const plans = configurePlans(finalPriceLevel, highlightedPlan);
+  const plans = configurePlans(priceLevel, highlightedPlan);
   console.log("Plans configured:", plans.map(p => ({
     title: p.title,
     price: p.price,
@@ -281,7 +272,7 @@ const Index = ({ priceLevel, activePlan, wslink }: IndexProps) => {
 
   // Función para determinar la visibilidad de botones basada en el plan activo
   const getButtonVisibility = (planIndex: number) => {
-    const currentPlanIndex = finalActivePlan - 1; // Convertir a índice base 0
+    const currentPlanIndex = activePlan - 1; // Convertir a índice base 0
 
     if (planIndex === currentPlanIndex) {
       return {
@@ -319,7 +310,7 @@ const Index = ({ priceLevel, activePlan, wslink }: IndexProps) => {
           </p>
           <div className="inline-flex items-center gap-2 px-4 py-2 bg-accent/20 rounded-full">
               <span className="text-sm font-semibold text-accent">
-                Plan actual: {getPlanNameByIndex(finalActivePlan)}
+                Plan actual: {getPlanNameByIndex(activePlan)}
               </span>
             </div>
         </div>
@@ -333,7 +324,7 @@ const Index = ({ priceLevel, activePlan, wslink }: IndexProps) => {
         </div>
 
         {/* Reference Information - Only show for Agronomías */}
-        {finalPriceLevel === 1 && <div className="max-w-5xl mx-auto mb-12">
+        {priceLevel === 1 && <div className="max-w-5xl mx-auto mb-12">
             <div className="bg-card/80 backdrop-blur-sm border border-border rounded-lg p-6 shadow-lg">
               <div className="text-center mb-4">
                 <h3 className="text-lg font-semibold text-accent">(*) Requisitos para Bonificación</h3>
@@ -377,9 +368,9 @@ const Index = ({ priceLevel, activePlan, wslink }: IndexProps) => {
         isOpen={isModalOpen} 
         onClose={() => setIsModalOpen(false)} 
         planName={selectedPlan || ""} 
-        currentPlan={getPlanNameByIndex(finalActivePlan)}
+        currentPlan={getPlanNameByIndex(activePlan)}
         wslink={finalWslink}
-        customerType={CUSTOMER_TYPE_MAPPING[finalPriceLevel]}
+        customerType={CUSTOMER_TYPE_MAPPING[priceLevel]}
       />
     </div>;
 };
