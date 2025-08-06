@@ -53,7 +53,7 @@ export const PlanRequestModal = ({ isOpen, onClose, planName, currentPlan }: Pla
             🚀 ¿Querés avanzar con el cambio de plan?
           </DialogTitle>
           <DialogDescription>
-            Formulario para solicitar el cambio de plan. Completá los datos y enviá tu solicitud.
+            
           </DialogDescription>
         </DialogHeader>
         
