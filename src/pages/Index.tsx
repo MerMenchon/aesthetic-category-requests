@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { PlanCard } from "@/components/PlanCard";
 import { PlanRequestModal } from "@/components/PlanRequestModal";
+import { GLOBALS } from "@/config/globals";
 
 // Define customer types and plan types
 type CustomerType = 1 | 2 | 3; // 1: Agronomía, 2: Empresa Chica, 3: Empresa Grande
@@ -249,17 +250,29 @@ const CONFIG = {
 
 };
 
+interface IndexProps {
+  priceLevel?: string;
+  activePlan?: string;
+  wslink?: string;
+}
+
 //Si es agronomia o empresa chica el recomendado es Galaxia
 //Si es empresa grande, el recomendado es interestelar
-const highlightedPlan = getHighlightedPlan(CONFIG.priceLevel);
-const Index = () => {
+const Index = ({ priceLevel, activePlan, wslink }: IndexProps) => {
   const [selectedPlan, setSelectedPlan] = useState<string | null>(null);
   const [isModalOpen, setIsModalOpen] = useState(false);
 
+  // Use props or fallback to CONFIG
+  const finalPriceLevel = (priceLevel ? parseInt(priceLevel) : CONFIG.priceLevel) as CustomerType;
+  const finalActivePlan = (activePlan ? parseInt(activePlan) : CONFIG.activePlan) as PlanType;
+  const finalWslink = wslink || GLOBALS.CUSTOMER_SUPPORT_URL;
+
+  const highlightedPlan = getHighlightedPlan(finalPriceLevel);
 
 
-  // Usar configurePlans con parámetros desde CONFIG y desde const highlightedPlan
-  const plans = configurePlans(CONFIG.priceLevel, highlightedPlan);
+
+  // Usar configurePlans con parámetros finales
+  const plans = configurePlans(finalPriceLevel, highlightedPlan);
   console.log("Plans configured:", plans.map(p => ({
     title: p.title,
     price: p.price,
@@ -268,7 +281,7 @@ const Index = () => {
 
   // Función para determinar la visibilidad de botones basada en el plan activo
   const getButtonVisibility = (planIndex: number) => {
-    const currentPlanIndex = CONFIG.activePlan - 1; // Convertir a índice base 0
+    const currentPlanIndex = finalActivePlan - 1; // Convertir a índice base 0
 
     if (planIndex === currentPlanIndex) {
       return {
@@ -306,7 +319,7 @@ const Index = () => {
           </p>
           <div className="inline-flex items-center gap-2 px-4 py-2 bg-accent/20 rounded-full">
               <span className="text-sm font-semibold text-accent">
-                Plan actual: {getPlanNameByIndex(CONFIG.activePlan)}
+                Plan actual: {getPlanNameByIndex(finalActivePlan)}
               </span>
             </div>
         </div>
@@ -320,7 +333,7 @@ const Index = () => {
         </div>
 
         {/* Reference Information - Only show for Agronomías */}
-        {CONFIG.priceLevel === 1 && <div className="max-w-5xl mx-auto mb-12">
+        {finalPriceLevel === 1 && <div className="max-w-5xl mx-auto mb-12">
             <div className="bg-card/80 backdrop-blur-sm border border-border rounded-lg p-6 shadow-lg">
               <div className="text-center mb-4">
                 <h3 className="text-lg font-semibold text-accent">(*) Requisitos para Bonificación</h3>
@@ -364,7 +377,9 @@ const Index = () => {
         isOpen={isModalOpen} 
         onClose={() => setIsModalOpen(false)} 
         planName={selectedPlan || ""} 
-        currentPlan={getPlanNameByIndex(CONFIG.activePlan)}
+        currentPlan={getPlanNameByIndex(finalActivePlan)}
+        wslink={finalWslink}
+        customerType={CUSTOMER_TYPE_MAPPING[finalPriceLevel]}
       />
     </div>;
 };

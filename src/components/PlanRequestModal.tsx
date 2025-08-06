@@ -11,9 +11,11 @@ interface PlanRequestModalProps {
   onClose: () => void;
   planName: string;
   currentPlan: string;
+  wslink?: string;
+  customerType?: string;
 }
 
-export const PlanRequestModal = ({ isOpen, onClose, planName, currentPlan }: PlanRequestModalProps) => {
+export const PlanRequestModal = ({ isOpen, onClose, planName, currentPlan, wslink, customerType }: PlanRequestModalProps) => {
   const [userMessage, setUserMessage] = useState("");
   const [isLoading, setIsLoading] = useState(false);
   const { toast } = useToast();
@@ -67,7 +69,7 @@ export const PlanRequestModal = ({ isOpen, onClose, planName, currentPlan }: Pla
           <p className="text-sm text-muted-foreground">
             Si tenés alguna duda o querés hablar con alguien de nuestro equipo, podés contactarte con{" "}
             <a 
-              href={GLOBALS.CUSTOMER_SUPPORT_URL} 
+              href={wslink || GLOBALS.CUSTOMER_SUPPORT_URL} 
               target="_blank" 
               rel="noopener noreferrer"
               className="text-primary hover:text-primary/80 underline"
