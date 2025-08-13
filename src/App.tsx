@@ -12,7 +12,11 @@ interface AppProps {
 }
 
 const App = (props: AppProps = {}) => {
-  const { priceLevel, activePlan, wslink } = props;
+  const { 
+    priceLevel = "1", 
+    activePlan = "1", 
+    wslink = "https://wa.me/5492494521359" 
+  } = props;
 
   return (
     <QueryClientProvider client={queryClient}>
